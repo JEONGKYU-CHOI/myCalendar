@@ -99,7 +99,7 @@
 		배경 색깔: <select name="color" id="color" name="color">
 			<option value="red">red</option>
 			<option value="orange">orange</option>
-			<option value="yellow">yellow</option>
+			<option value="#c8b900">yellow</option>
 			<option value="green">green</option>
 			<option value="blue">blue</option>
 			<option value="purple">purple</option>
