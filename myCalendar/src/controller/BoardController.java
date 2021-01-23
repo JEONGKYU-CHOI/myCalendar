@@ -42,13 +42,13 @@ public class BoardController {
 	public String selectBoard(Model m, Board board) {
 
 		
-		
+		   
 		List<Board> bList = boardservice.selectBoard();
 		m.addAttribute("bList", bList);
 
 		return "B.boardList";
 	}
-	 
+	        
 //	board
 	       
 	//insert
@@ -57,7 +57,7 @@ public class BoardController {
 
 		return "B.insertBoard";
 	}
-	     
+	           
 	@PostMapping("/insert")
 	public String insertBoard(Model m, @RequestParam(value = "num", defaultValue = "1")int num, Board board) {
 		Page page = new Page();

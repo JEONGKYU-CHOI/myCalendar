@@ -17,7 +17,7 @@
 
 
 <!-- bean 등록 -->
-<context:component-scan base-package="schedule, user"></context:component-scan>
+<context:component-scan base-package="schedule, user, board, comment, login, controller"></context:component-scan>
 
 <!-- db 접속 프로퍼티 추가 -->
 <context:property-placeholder location="classpath:config/db_info.properties"/>
@@ -37,7 +37,7 @@
 </bean>
 
 <!-- mybatis mapper 등록 -->
-<mybatis-spring:scan base-package="schedule, user"/>
+<mybatis-spring:scan base-package="schedule, user, board, comment, login, controller"/>
 
 <!-- 파라미터 처리를 위해 -->
 <mvc:annotation-driven></mvc:annotation-driven>

@@ -10,8 +10,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import board.Board;
+import board.BoardService;
+import board.Page;
+import comment.CommentService;
+import login.LoginService;
 
 @Controller
 @RequestMapping("/schedule")
@@ -19,6 +26,12 @@ public class ScheduleController {
 	
 	@Autowired
 	ScheduleService service;
+	@Autowired
+	private BoardService boardservice;
+	@Autowired
+	private CommentService commentservice;
+	@Autowired
+	private LoginService loginservice;
 	
 	@PostMapping("/afterLogin") 
 	public String afterLogin(Model m, int num) {
@@ -48,8 +61,8 @@ public class ScheduleController {
 		int rs=service.deleteSchedule(id);
 		m.addAttribute("result", rs);
 		return "deleteResult";
-	}
-	
+	} 
+	     
 	@GetMapping("/insertData")
 	public String insertData() {
 		return "insertDataForm";
@@ -81,4 +94,29 @@ public class ScheduleController {
 		return "showText";
 	}
 
+	@GetMapping("/listPage")
+	public String selectBoardPage(Model m, @RequestParam(value = "num", defaultValue = "1")int num) {
+		Page page = new Page();
+		
+		page.setNum(num);
+		page.setCount(boardservice.selectCount());
+		
+		List<Board> bList = boardservice.listPage(page.getDisplayPost(), page.getPostNum());
+		
+ 		m.addAttribute("bList", bList);
+	
+// 		전부 page로 대체가능
+//		m.addAttribute("pageNum", page.getPageNum());
+//		
+//		m.addAttribute("startPageNum", page.getStartPageNum());
+//		m.addAttribute("endPageNum", page.getEndPageNum());
+//		
+//		m.addAttribute("prev", page.getPrev());
+//		m.addAttribute("next", page.getNext());
+		
+		m.addAttribute("page", page);
+		m.addAttribute("select", num);
+		return "B.page";
+	}       
+	
 }
