@@ -24,8 +24,7 @@ import board.BoardService;
 import board.Page;
 import comment.Comment;
 import comment.CommentService;
-import login.Login;
-import login.LoginService;
+
 
 @Controller
 @RequestMapping(value = "/board", produces = "application/json; charset=utf8")
@@ -35,9 +34,6 @@ public class BoardController {
 	private BoardService boardservice;
 	@Autowired
 	private CommentService commentservice;
-	@Autowired
-	private LoginService loginservice;
-	
 	@GetMapping("/select")
 	public String selectBoard(Model m, Board board) {
 
@@ -328,28 +324,28 @@ public class BoardController {
 		return "B.login";
 	}
 
-	@PostMapping("/login")
-	public String login(Login login, HttpServletRequest req, RedirectAttributes rttr) {
-		
-		HttpSession session = req.getSession();
-		Login login1 = loginservice.selectLogin(login);
-		System.out.println(login1);
-		if(login == null) {
-			session.setAttribute("member", null);
-			rttr.addFlashAttribute("msg", false);
-		}else {
-			session.setAttribute("member", login1);
-		}
-		return "redirect:/board/listPage";
-	}
-	
-//	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-	@GetMapping("/logout")
-	public String logout(HttpSession session) throws Exception{
-		
-		session.invalidate();
-		
-		return "redirect:/board/listPage";
-}  
+//	@PostMapping("/login")
+//	public String login(Login login, HttpServletRequest req, RedirectAttributes rttr) {
+//		
+//		HttpSession session = req.getSession();
+//		Login login1 = loginservice.selectLogin(login);
+//		System.out.println(login1);
+//		if(login == null) {
+//			session.setAttribute("member", null);
+//			rttr.addFlashAttribute("msg", false);
+//		}else {
+//			session.setAttribute("member", login1);
+//		}
+//		return "redirect:/board/listPage";
+//	}
+//	
+////	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+//	@GetMapping("/logout")
+//	public String logout(HttpSession session) throws Exception{
+//		
+//		session.invalidate();
+//		
+//		return "redirect:/board/listPage";
+//}  
 }
         

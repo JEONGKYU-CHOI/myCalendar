@@ -11,14 +11,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
+
 
 import board.Board;
 import board.BoardService;
 import board.Page;
-import comment.CommentService;
-import login.LoginService;
+
+
 
 @Controller
 @RequestMapping("/schedule")
@@ -28,10 +27,8 @@ public class ScheduleController {
 	ScheduleService service;
 	@Autowired
 	private BoardService boardservice;
-	@Autowired
-	private CommentService commentservice;
-	@Autowired
-	private LoginService loginservice;
+
+
 	
 	@PostMapping("/afterLogin") 
 	public String afterLogin(Model m, int num) {
