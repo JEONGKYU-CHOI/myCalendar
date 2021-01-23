@@ -121,7 +121,7 @@
   	<ul class="navbar_logo">
 		<li>
 		<i class="far fa-calendar-alt" style="color: #fff59d;"></i>
-		<a href="${pageContext.request.contextPath}/index.jsp">&nbsp;myCalendar</a>
+		<span>&nbsp;myCalendar</span>
 		</li>
 		<li><a id="QA">Q&A</a></li>
   	</ul>
