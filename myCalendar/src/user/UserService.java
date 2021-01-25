@@ -60,7 +60,7 @@ public class UserService {
 	}
 	
 	public int updateUserPw(User user) {
-		return userMapper.updateUser(user);
+		return userMapper.updateUserPw(user);
 	}
 
 }

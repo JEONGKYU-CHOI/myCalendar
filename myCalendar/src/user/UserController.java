@@ -198,6 +198,7 @@ public class UserController {
 				sb.append(charSet[idx]);
 			}
 			String pw=sb.toString();
+			System.out.println(selectUser);
 			m.addAttribute("selectUser", selectUser);
 			m.addAttribute("password", pw);
 			return "changeResult";
