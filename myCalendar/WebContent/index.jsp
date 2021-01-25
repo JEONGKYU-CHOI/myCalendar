@@ -128,7 +128,7 @@
   	
   	<ul class="navbar_icons">
   		<li><a href="${pageContext.request.contextPath}/user/login"><i class="fas fa-sign-in-alt"></i></a></li>
-  		<li><i class="fas fa-user-plus"></i></li>
+  		<li><a href="${pageContext.request.contextPath}/user/add"><i class="fas fa-user-plus"></i></a></li>
   	</ul>
   </nav>
   <div id='calendar'></div>

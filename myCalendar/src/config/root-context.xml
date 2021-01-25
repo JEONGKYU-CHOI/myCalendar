@@ -34,6 +34,11 @@
 <bean class="org.mybatis.spring.SqlSessionFactoryBean">
 	<property name="dataSource" ref="dataSource"></property>
 	<property name="configLocation" value="classpath:config/mybatisConfig.xml"></property>
+	<property name="mapperLocations">
+		<list>
+			<value>classpath:user/userMapper.xml</value>
+		</list>
+	</property>
 </bean>
 
 <!-- mybatis mapper 등록 -->

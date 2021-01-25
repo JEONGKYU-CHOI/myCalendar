@@ -3,30 +3,45 @@ package user;
 public class User {
 	
 	private int number;
-	private String name;
+	
 	private String id;
+
+	private String name;
+
 	private String password;
+
 	private String phone;
+	
 	private String email;
+	
 	public User() {	}
 	
+	public User(int number, String id, String name, String password, String phone, String email) {
+		super();
+		this.number = number;
+		this.id = id;
+		this.name = name;
+		this.password = password;
+		this.phone = phone;
+		this.email = email;
+	}
 	public int getNumber() {
 		return number;
 	}
 	public void setNumber(int number) {
 		this.number = number;
 	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getPassword() {
 		return password;
@@ -46,10 +61,9 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
 	@Override
 	public String toString() {
-		return "User [number=" + number + ", name=" + name + ", id=" + id + ", password=" + password + ", phone="
+		return "User [number=" + number + ", id=" + id + ", name=" + name + ", password=" + password + ", phone="
 				+ phone + ", email=" + email + "]";
 	}
 	
