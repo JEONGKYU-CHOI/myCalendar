@@ -155,7 +155,7 @@
 		<i class="far fa-calendar-alt" style="color: #fff59d;"></i>
 		<span>&nbsp;myCalendar</span>
 		</li>
-		<li><a id="QA" href="/board/listPage">Q&A</a></li>
+		<li><a id="QA" href="${pageContext.request.contextPath}/board/listPage">Q&A</a></li>
   	</ul>
   	
   	<ul class="navbar_icons">
