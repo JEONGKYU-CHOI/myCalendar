@@ -51,6 +51,16 @@ public class UserService {
 		return userMapper.kakaoLogin(user);
 	}
 
+	public User getUserByEmail(String email) {
+		return userMapper.selectUserByEmail(email);
+	}
 	
+	public User updateTogetUser(String userId) {
+		return userMapper.updateToUserById(userId);
+	}
+	
+	public int updateUserPw(User user) {
+		return userMapper.updateUser(user);
+	}
 
 }

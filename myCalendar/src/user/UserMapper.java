@@ -36,4 +36,12 @@ public interface UserMapper {
 		//kakao 로그인
 		public User kakaoLogin(User user);
 		
+		//아이디 찾기
+		public User selectUserByEmail(String email);
+		
+		//비밀번호 찾기
+		public User updateToUserById(String userId);
+		
+		//비밀번호 변경
+		public int updateUserPw(User user);
 }

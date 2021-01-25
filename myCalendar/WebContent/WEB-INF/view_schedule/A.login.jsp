@@ -22,8 +22,10 @@
 	<img src="https://www.gb.go.kr/Main/Images/ko/member/certi_kakao_login.png" style="height:60px;width:auto"/>
 	</a>
 	<a href="http://developers.kakao.com/logout"></a>
-
 </div>	
+
+	<a href="${pageContext.request.contextPath}/user/findId">아이디 찾기</a><br>
+	<a href="${pageContext.request.contextPath}/user/changePw">비밀번호 변경하기</a><br>
 	
 <script src = "//developers.kakao.com/sdk/js/kakao.min.js"></script>
 

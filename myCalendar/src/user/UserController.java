@@ -169,5 +169,45 @@ public class UserController {
 			}
 			
 		}
+		
+		@GetMapping("/findId")
+		public String find() {
+			return "findIdForm";
+		}
+		
+		@PostMapping("/findResult")
+		public String findId(Model m, String email) {
+			User findUser=userService.getUserByEmail(email);
+			m.addAttribute("findUser", findUser);
+			return "findResult";
+		}
+		
+		@GetMapping("/changePw")
+		public String change() {
+			return "changePwForm";
+		}
+		
+		@PostMapping(value="/changeResult")
+		public String changePwFirst(Model m, String id) {
+			User selectUser=userService.updateTogetUser(id);
+			char[] charSet = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+			int idx = 0;
+			StringBuffer sb = new StringBuffer();
+			for (int i=0; i<10; i++){ 
+				idx=(int)(charSet.length * Math.random());
+				sb.append(charSet[idx]);
+			}
+			String pw=sb.toString();
+			m.addAttribute("selectUser", selectUser);
+			m.addAttribute("password", pw);
+			return "changeResult";
+		}
+		
+		@PostMapping("/changePwResult")
+		public String changePwSecond(Model m, User user) {
+			int rs=userService.updateUserPw(user);
+			m.addAttribute("result", rs);
+			return "A.login";
+		}
 	
 }

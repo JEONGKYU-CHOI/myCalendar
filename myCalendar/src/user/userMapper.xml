@@ -19,28 +19,43 @@
   	
   	<insert id="insertUser" parameterType="user" useGeneratedKeys="true" keyProperty="number">
   		insert into newuser(number, id, name, password, phone, email)
-  		values(#{number}, #{id},#{name},#{password},#{phone},#{email})
-  	
+  		values(#{number}, #{id},#{name},#{password},#{phone},#{email}) 	
   	</insert>
+  	
   	<select id="selectAll" resultType="user">
   		select number, id, password, name, phone, email from newuser
   	</select>
+  	
   	<update id="updateUser" parameterType="user">
   		update newuser set number=#{number}, id=#{id}, password=#{password}, name=#{name}, 
     	phone=#{phone}, email=#{email}   
 	    where number=#{number}
-  	
   	</update>
+  	
   	<delete id="deleteUser">
   		delete from newuser where number=#{number}
   	</delete>
-  	<!-- 일반 사용자 로그인시 아이디 및 패스워드 확인후 로그인수행 -->
+  	
+  	<!-- 일반 사용자 로그인 시 아이디 및 패스워드 확인 후 로그인 수행 -->
   	<select id="loginUser" parameterType="user" resultType="user">
   		select * from newuser where id=#{id} and password=#{password}
 	</select>
   
-  	<!-- kakatotalk로그인시 이메일값을 기준으로 로그인수행함-->
+  	<!-- kakatotalk 로그인 시 이메일 값을 기준으로 로그인 수행-->
   	<select id="kakaoLogin" parameterType="user" resultType="user">
   		select * from newuser where email=#{email}
   	</select>
+  	
+  	<select id="selectUserByEmail" parameterType="user" resultType="user">
+  		select id from newuser where email=#{email}
+  	</select>
+  	
+  	<select id="updateToUserById" parameterType="user" resultType="user">
+  		select id, password from newuser where id=#{id}
+  	</select>
+  	
+  	<update id="updateUserPw" parameterType="user">
+  		update newuser set password=#{password} where id=#{id}
+  	</update>
+  	
   </mapper>
