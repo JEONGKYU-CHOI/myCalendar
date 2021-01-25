@@ -119,7 +119,7 @@ padding-bottom: 30px;
 		<div>
  				<button type="button" class="btn btn-sm btn-primary" id="insertBoard">글쓰러 가기</button>
  			</div>
- 			<a href="/board/insertform">게시글 쓰러가기</a>
+ 			<a href="${pageContext.request.contextPath}/board/insertform">게시글 쓰러가기</a>
 		
 		 <div>
  	<form action="/board/title" method="get">
