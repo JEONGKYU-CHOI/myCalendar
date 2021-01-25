@@ -160,7 +160,7 @@
   	
   	<ul class="navbar_icons">
   		<li><a href="${pageContext.request.contextPath}/index.jsp"><i class="fas fa-sign-out-alt"></i></a></li>
-  		<li><i class="fas fa-users-cog"></i></li>
+  		<li><a href="${pageContext.request.contextPath}/user/viewUser?number=${sessionScope.loginNumber}"><i class="fas fa-users-cog"></i></a></li>
   	</ul>
   </nav>
   <div id='calendar'></div>

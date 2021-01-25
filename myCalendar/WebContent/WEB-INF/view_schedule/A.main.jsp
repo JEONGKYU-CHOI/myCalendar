@@ -7,15 +7,11 @@
 <title>main</title>
 </head>
 <body>
-<h1>${sessionScope.loginId}님의 페이지</h1>
-	
-	<form action="test" method="get">
-		<!-- <input type="submit" value="test"> --><!-- 컨텍스트패스 추가함.-->
-		<p><a href="${pageContext.request.contextPath}/user/viewUser?number=${sessionScope.loginNumber}">마이페이지</a></p>
+<h1>${sessionScope.loginId}님, 방문을 환영합니다!</h1>
+	<form action="${pageContext.request.contextPath}/schedule/afterLogin?num=${sessionScope.loginNumber}" method="post">
+		<input type="submit" value="이용하러 가기">
 	</form>
-	<form action="logout" method="get">
-		<input type="submit" value="logout">
-	</form>
+
 	
 <%-- <%
 	String kakaonickname = request.getParameter("kakaonickname");

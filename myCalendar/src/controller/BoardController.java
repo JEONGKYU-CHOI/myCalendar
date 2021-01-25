@@ -36,9 +36,7 @@ public class BoardController {
 	private CommentService commentservice;
 	@GetMapping("/select")
 	public String selectBoard(Model m, Board board) {
-
 		
-		   
 		List<Board> bList = boardservice.selectBoard();
 		m.addAttribute("bList", bList);
 
