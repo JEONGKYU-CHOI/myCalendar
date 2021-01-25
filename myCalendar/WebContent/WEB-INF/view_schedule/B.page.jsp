@@ -27,10 +27,16 @@ padding-bottom: 30px;
 </style>
 </head>
 <body style="text-align: center; ">
+
 	<h2>게시판</h2>
 	<article>
 	<div class="container">
 		<div class="table-responsive">
+	<div>
+	   	<form style="float: right;" action="${pageContext.request.contextPath}/schedule/afterLogin?num=${sessionScope.loginNumber}" method="post">
+      <input type="submit" value="일정 페이지 가기">
+   		</form>
+	</div>
 			
 		<table class="table table-striped table-sm">
 			<colgroup>
@@ -97,13 +103,13 @@ padding-bottom: 30px;
 			<footer>
 		<div>
 			 <c:if test="${page.prev}">
- 				<span>[ <a href="/board/listPage?num=${page.startPageNum - 1}">이전</a> ]</span>
+ 				<span>[ <a href="${pageContext.request.contextPath}/board/listPage?num=${page.startPageNum - 1}">이전</a> ]</span>
 			</c:if>
 
 			<c:forEach begin="${page.startPageNum}" end="${page.endPageNum}" var="num">
   				<span>
   					<c:if test="${select != num}">
-   						<a href="/board/listPage?num=${num}">${num}</a>
+   						<a href="${pageContext.request.contextPath}/board/listPage?num=${num}">${num}</a>
    					</c:if>	 
    					<c:if test="${select == num}">
    						<b>${num }</b>
@@ -112,17 +118,14 @@ padding-bottom: 30px;
 			</c:forEach>
 
 			<c:if test="${page.next}">
- 				<span>[ <a href="/board/listPage?num=${page.endPageNum + 1}">다음</a> ]</span>
+ 				<span>[ <a href="${pageContext.request.contextPath}/board/listPage?num=${page.endPageNum + 1}">다음</a> ]</span>
 			</c:if>
 		</div>
 		
-		<div>
- 				<button type="button" class="btn btn-sm btn-primary" id="insertBoard">글쓰러 가기</button>
- 			</div>
  			<a href="${pageContext.request.contextPath}/board/insertform">게시글 쓰러가기</a>
 		
 		 <div>
- 	<form action="/board/title" method="get">
+ 	<form action="${pageContext.request.contextPath}/board/title" method="get">
  	
 		<input type="text" name="boardTitle" placeholder="제목을 입력하세요">
 		

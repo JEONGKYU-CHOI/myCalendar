@@ -13,7 +13,7 @@
 
  	<div style="width: 80%; margin: auto;">
 
-  <form action="/board/insertcomment" method="post">
+  <form action="${pageContext.request.contextPath}/board/insertcomment" method="post">
   	게시글 번호 : <input type="number" name="boardId" value="${board.id} " readonly="readonly">
  	댓글 제목 : <input id="title" type="text" name="boardTitle" style="width: 50%;"> 
   	댓글 내용 : <input id="name" type="text" name="boardName" style="width: 30%;"> <br>

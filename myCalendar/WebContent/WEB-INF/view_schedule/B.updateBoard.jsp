@@ -42,10 +42,10 @@ $(document).ready(function() {
 
  	<div style="width: 80%; margin: auto;">
 
-  <form action="/board/update" method="post">
+  <form action="${pageContext.request.contextPath}/board/update" method="post">
   	<input type="hidden" name="id" style="width: 10%;" value="${board.id}" readonly="readonly"> <br>
- 	<input type="text" name="boardTitle" style="width: 50%;" value="${board.boardTitle}"> <br>
-  	<input type="text" name="boardName" style="width: 30%;" value="${board.boardName}"> <br>
+ 	<input type="text" name="boardTitle" style="width: 50%;" value="${board.boardTitle}" readonly="readonly"> <br>
+  	<input type="text" name="boardName" style="width: 30%;" value="${board.boardName}" readonly="readonly"> <br>
   	
 	<textarea id="summernote" name="boardContent">${board.boardContent}</textarea>
   	<input type="submit" style="float: right;" value="수정">

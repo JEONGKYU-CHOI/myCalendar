@@ -88,7 +88,7 @@ padding-bottom: 30px;
 			</tbody>
 			</table>
 			</div>
-		<a href="/board/listPage" style="float: right;">게시판 가기</a>
+		<a href="${pageContext.request.contextPath}/board/listPage" style="float: right;">게시판 가기</a>
 		</div>
 	</article>
 </body>

@@ -56,11 +56,11 @@ padding-bottom: 30px;
 	</div>
 		<hr style="background-color: white; height: 5px; margin: 0px;">	
 		<span style="height: 10px; font-size: medium; float: left">
-			<a href="/board/check?id=${board.id }">수정</a>
+			<a href="${pageContext.request.contextPath}/board/check?id=${board.id }">수정</a>
 			<a> / </a>
-			<a href="/board/delete?id=${board.id }">삭제</a>
+			<a href="${pageContext.request.contextPath}/board/delete?id=${board.id }">삭제</a>
 			<a> / </a>
-			<a href="/board/listPage">게시판 가기</a>
+			<a href="${pageContext.request.contextPath}/board/listPage">게시판 가기</a>
 		</span>
 		
 	</section>
@@ -78,9 +78,9 @@ padding-bottom: 30px;
 						</div>
 						
 				<span style="height: 10px; font-size: small; float: left">
-					<a href="/board/check1?id=${comment.id }">수정</a>
+					<a href="${pageContext.request.contextPath}/board/check1?id=${comment.id }">수정</a>
 					<a> / </a>
-					<a href="/board/delete1?id=${comment.id }">삭제</a>
+					<a href="${pageContext.request.contextPath}/board/delete1?id=${comment.id }">삭제</a>
 				</span>
 					</div>
 				<hr style="background-color: white; height: 5px; margin: 0px;">
@@ -92,7 +92,7 @@ padding-bottom: 30px;
 
 		<h2 style="text-align: center;">댓글 작성</h2><br>
 		<section class="rounded-bottom" style="background-color: lightgray; width: auto; height: auto; padding: 20px;">
-	    <form action="/board/insertcomment" method="post">
+	    <form action="${pageContext.request.contextPath}/board/insertcomment" method="post">
 		<div style="width: auto; margin: 10px;">
   	<div style="width: 25%; float: reft; text-align: reft;">
   	<input type="hidden" name="boardId" value="${board.id}">

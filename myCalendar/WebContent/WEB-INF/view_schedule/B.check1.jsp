@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body style="text-align: center; margin: 30%; margin-top: 10%;">
-	<form class="form-inline" action="/board/update1" method="get">
+	<form class="form-inline" action="${pageContext.request.contextPath}/board/update1" method="get">
 <div class="form-group mb-2">
 	댓글 NO : <input type="text" name="id" value="${comment.id }">
 </div>
@@ -17,7 +17,7 @@
 <button type="submit" class="btn btn-primary mb-2" style="float: right;">완료</button>
 	</form>
 <div>
-<a href="/board/listPage">리스트로 가기</a>
+<a href="${pageContext.request.contextPath}/board/listPage">리스트로 가기</a>
 </div>
 </body>
 </html>

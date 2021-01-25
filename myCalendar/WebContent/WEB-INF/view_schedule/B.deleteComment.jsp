@@ -8,7 +8,7 @@
 
 </head>
 <body style="text-align: center; margin: 30%; margin-top: 10%;">
-	<form class="form-inline" action="/board/deletecomment" method="post">
+	<form class="form-inline" action="${pageContext.request.contextPath}/board/deletecomment" method="post">
 <div class="form-group mb-2">
 	댓글 NO : <input type="text" name="id" value="${comment.id }">
 </div>
@@ -18,7 +18,7 @@
 <button type="submit" class="btn btn-primary mb-2" style="float: right;">완료</button>
 	</form>
 <div>
-<a href="/board/listPage">리스트로 가기</a>
+<a href="${pageContext.request.contextPath}/board/listPage">리스트로 가기</a>
 </div>
 </body>
 </html>

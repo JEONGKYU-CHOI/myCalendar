@@ -7,7 +7,7 @@
 <title>check</title>
 </head>
 <body style="text-align: center; margin: 30%; margin-top: 10%;">
-	<form class="form-inline" action="/board/update" method="get">
+	<form class="form-inline" action="${pageContext.request.contextPath}/board/update" method="get">
 <div class="form-group mb-2">
 	게시글 NO : <input class="form-control-plaintext" type="text" name="id" value="${board.id }" readonly="readonly">
 </div>	
@@ -17,7 +17,7 @@
 <button type="submit" class="btn btn-primary mb-2" style="float: right;">완료</button>
 	</form>
 <div>
-<a href="/board/listPage">리스트로 가기</a>
+<a href="${pageContext.request.contextPath}/board/listPage">리스트로 가기</a>
 </div>
 </body>
 </html>
