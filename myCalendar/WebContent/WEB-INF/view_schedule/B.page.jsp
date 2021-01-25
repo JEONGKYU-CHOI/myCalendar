@@ -33,9 +33,16 @@ padding-bottom: 30px;
 	<div class="container">
 		<div class="table-responsive">
 	<div>
-	   	<form style="float: right;" action="${pageContext.request.contextPath}/schedule/afterLogin?num=${sessionScope.loginNumber}" method="post">
-      <input type="submit" value="일정 페이지 가기">
+	<c:if test="${sessionScope.loginId == null }">
+	   	<form style="float: right;" action="${pageContext.request.contextPath}/index.jsp">
+      <input type="submit" value="일정 페이지 가기 / 비로그인">
    		</form>
+   	</c:if>
+   	<c:if test="${sessionScope.loginId != null }">
+   		<form style="float: right;" action="${pageContext.request.contextPath}/schedule/afterLogin?num=${sessionScope.loginNumber}" method="post">
+      <input type="submit" value="일정 페이지 가기 / 로그인">
+   		</form>
+   	</c:if>	
 	</div>
 			
 		<table class="table table-striped table-sm">
@@ -121,9 +128,9 @@ padding-bottom: 30px;
  				<span>[ <a href="${pageContext.request.contextPath}/board/listPage?num=${page.endPageNum + 1}">다음</a> ]</span>
 			</c:if>
 		</div>
-		
+			<c:if test="${sessionScope.loginId != null }">
  			<a href="${pageContext.request.contextPath}/board/insertform">게시글 쓰러가기</a>
-		
+			</c:if>
 		 <div>
  	<form action="${pageContext.request.contextPath}/board/title" method="get">
  	

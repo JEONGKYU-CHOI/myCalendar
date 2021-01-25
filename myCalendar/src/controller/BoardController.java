@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+
 import board.Board;
 
 import board.BoardService;
@@ -69,6 +70,8 @@ public class BoardController {
 		m.addAttribute("select", num);
 		boardservice.insertBoard(board);
 //		boardservice.insertBoardImg(board);
+		
+		
 		return "B.page";
 	}
 	

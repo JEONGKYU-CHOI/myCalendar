@@ -56,10 +56,12 @@ padding-bottom: 30px;
 	</div>
 		<hr style="background-color: white; height: 5px; margin: 0px;">	
 		<span style="height: 10px; font-size: medium; float: left">
+		<c:if test="${sessionScope.loginId != null }">
 			<a href="${pageContext.request.contextPath}/board/check?id=${board.id }">수정</a>
 			<a> / </a>
 			<a href="${pageContext.request.contextPath}/board/delete?id=${board.id }">삭제</a>
 			<a> / </a>
+		</c:if>
 			<a href="${pageContext.request.contextPath}/board/listPage">게시판 가기</a>
 		</span>
 		
@@ -78,9 +80,11 @@ padding-bottom: 30px;
 						</div>
 						
 				<span style="height: 10px; font-size: small; float: left">
+				<c:if test="${sessionScope.loginId != null }">
 					<a href="${pageContext.request.contextPath}/board/check1?id=${comment.id }">수정</a>
 					<a> / </a>
 					<a href="${pageContext.request.contextPath}/board/delete1?id=${comment.id }">삭제</a>
+				</c:if>
 				</span>
 					</div>
 				<hr style="background-color: white; height: 5px; margin: 0px;">

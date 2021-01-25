@@ -118,6 +118,7 @@ $(document).ready(function() {
  	<div style="width: 80%; margin: auto;">
 
   <form action="${pageContext.request.contextPath}/board/insert" method="post">
+  	
  	게시글 제목 : <input id="title" type="text" name="boardTitle" style="width: 50%;" placeholder="제목"> <br> 
   	NAME : <input id="name" type="text" name="boardName" style="width: 30%;" placeholder="작성자">
   	PW : <input type="password" name="boardPassword" style="width: 30%;" placeholder="비밀번호"> <br>
