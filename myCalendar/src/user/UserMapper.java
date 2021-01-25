@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
-
+//수정본
 //현재 클래스를 빈으로 등록
 // 아이디랑 비번이 일치하는지 비교를 위해서 map에 저장한다.
 //아이디랑 비번이 일치하여 1이면 true를 리턴함.

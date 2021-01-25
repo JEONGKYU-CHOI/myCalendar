@@ -39,7 +39,7 @@
   		select * from newuser where id=#{id} and password=#{password}
 	</select>
   
-  	<!-- kakatotalk로그인시 이메일값을 기준으로 로그인수행-->
+  	<!-- kakatotalk로그인시 이메일값을 기준으로 로그인수행함-->
   	<select id="kakaoLogin" parameterType="user" resultType="user">
   		select * from newuser where email=#{email}
   	</select>

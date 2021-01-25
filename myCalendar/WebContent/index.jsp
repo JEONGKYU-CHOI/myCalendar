@@ -129,6 +129,7 @@
   	<ul class="navbar_icons">
   		<li><a href="${pageContext.request.contextPath}/user/login"><i class="fas fa-sign-in-alt"></i></a></li>
   		<li><a href="${pageContext.request.contextPath}/user/add"><i class="fas fa-user-plus"></i></a></li>
+		<!-- 컨텍스트패스 추가함.-->
   	</ul>
   </nav>
   <div id='calendar'></div>

@@ -8,7 +8,7 @@
 </head>
 <body>
 <form action="${pageContext.request.contextPath}/user/kakaoAdd" method="post">
-
+<!-- 컨텍스트패스 추가함.-->
 <!-- 아이디 -->
 	<div class="form-group">
 		<label for="id">아이디</label>

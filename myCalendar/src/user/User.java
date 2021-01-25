@@ -1,5 +1,5 @@
 package user;
-
+//수정본
 public class User {
 	
 	private int number;

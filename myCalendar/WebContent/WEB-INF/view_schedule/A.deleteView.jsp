@@ -17,7 +17,7 @@
 	<br>
 	<br>
 	<a href="${pageContext.request.contextPath}/index.jsp">홈으로이동</a>
-	
+	<!-- 컨텍스트패스 추가함.-->
 </div>
 
 </form>

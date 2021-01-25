@@ -10,7 +10,7 @@
 <h1>${sessionScope.loginId}님의 페이지</h1>
 	
 	<form action="test" method="get">
-		<!-- <input type="submit" value="test"> -->
+		<!-- <input type="submit" value="test"> --><!-- 컨텍스트패스 추가함.-->
 		<p><a href="${pageContext.request.contextPath}/user/viewUser?number=${sessionScope.loginNumber}">마이페이지</a></p>
 	</form>
 	<form action="logout" method="get">

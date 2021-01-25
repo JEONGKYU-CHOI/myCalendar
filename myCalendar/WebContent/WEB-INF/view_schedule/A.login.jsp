@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>로그인</h1>
-	
+	<!-- 컨텍스트패스 추가함.-->
 	<form action="${pageContext.request.contextPath}/user/loginUser" method="post">
 	<font color="red">${message}</font><br>
 		ID:<input type="text" name="id"><br>

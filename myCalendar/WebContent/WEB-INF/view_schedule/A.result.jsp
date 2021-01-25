@@ -24,7 +24,7 @@
 	<p><a href="/user/viewUser">회원상세보기</a></p>
 	<p><a href="/user/delete">회원탈퇴</a></p> -->
 	<p><a href="${pageContext.request.contextPath}/user/login">로그인하기</a></p>
-
+<!-- 컨텍스트패스 추가함.-->
 
 </body>
 </html>

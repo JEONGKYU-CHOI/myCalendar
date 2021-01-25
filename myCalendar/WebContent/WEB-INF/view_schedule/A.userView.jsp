@@ -10,7 +10,7 @@
 <%--  <%@ include file="../include/user_menu.jsp" %> --%>
 
 <h2>회원 정보 상세 내용</h2>
-
+<!-- 컨텍스트패스 추가함.-->
 <form action="${pageContext.request.contextPath}/user/viewUser" name="form1" method="post">
 <%-- 
 	회원번호:${user.number} <br>
