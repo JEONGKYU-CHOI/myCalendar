@@ -262,13 +262,13 @@ public class BoardController {
 //		return "B.selectform";
 //	}
 	
-	@GetMapping("/onecomment")
-	public String selectComment(Model m, int id) {
-		Comment comment = commentservice.selectById(id);
-		m.addAttribute("comment", comment);
-		System.out.println(comment + "3번");
-		return "B.commentform";
-	}
+//	@GetMapping("/onecomment")
+//	public String selectComment(Model m, int id) {
+//		Comment comment = commentservice.selectById(id);
+//		m.addAttribute("comment", comment);
+//		System.out.println(comment + "3번");
+//		return "B.commentform";
+//	}
 	
 	//page
 	
