@@ -7,14 +7,18 @@
 <title>Insert title here</title>
 
 </head>
-<body>
-<div>
-	<form action="/board/deletecomment" method="post">
-	<input type="text" name="id" value="${comment.id }">
-	<input type="text" name="commentPassword" >
-	<input type="submit" value="삭제">
-	</form>
+<body style="text-align: center; margin: 30%; margin-top: 10%;">
+	<form class="form-inline" action="/board/deletecomment" method="post">
+<div class="form-group mb-2">
+	댓글 NO : <input type="text" name="id" value="${comment.id }">
 </div>
+<div class="form-group mx-sm-3 mb-2">	
+	댓글 PW : <input type="password" name="commentPassword" >
+</div>	
+<button type="submit" class="btn btn-primary mb-2" style="float: right;">완료</button>
+	</form>
+<div>
 <a href="/board/listPage">리스트로 가기</a>
+</div>
 </body>
 </html>

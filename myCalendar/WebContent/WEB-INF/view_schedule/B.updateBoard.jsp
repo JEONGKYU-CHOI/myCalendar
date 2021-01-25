@@ -47,7 +47,7 @@ $(document).ready(function() {
  	<input type="text" name="boardTitle" style="width: 50%;" value="${board.boardTitle}"> <br>
   	<input type="text" name="boardName" style="width: 30%;" value="${board.boardName}"> <br>
   	
-	<textarea id="summernote" name="boardContent"></textarea>
+	<textarea id="summernote" name="boardContent">${board.boardContent}</textarea>
   	<input type="submit" style="float: right;" value="수정">
 </form>
 

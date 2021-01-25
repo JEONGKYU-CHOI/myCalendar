@@ -10,6 +10,9 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <title>Insert title here</title>
+<!-- Bootstrap CSS -->
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 <script type="text/javascript">
 window.addEventListener("DOMContentLoaded",function(){
 	var deleteList = document.querySelectorAll("a[href^=delete]");
@@ -22,127 +25,92 @@ window.addEventListener("DOMContentLoaded",function(){
 	});
 	})
 </script>
+<style>
 
+body {
+
+padding-top: 70px;
+
+padding-bottom: 30px;
+
+}
+</style>
 </head>
-<body>
+<body style="text-align: center; margin-left: 20%; margin-right: 20%;">
 
-
-	<div style="width: 80%; margin: auto;">
 	<h2>조회된 게시글 내용</h2>
+	<section class="rounded-top" style="background-color: lightgray; width: auto; height: auto; padding: 20px;">
+	<div style="width: auto%; height: auto; padding-bottom: 50px;" >
+		<div style="text-align: center;">${board.boardTitle}</div>
 		
-		<table border="1">
-			<thead>
-				<tr>
-				 	<th>NO</th>
-				
-				 	<th>Title</th>
-				
-				 	<th>content</th>
-				
-				 	<th>ID</th>
-				
-				 	<th>작성일시</th>
-				
-				 	<th>수정일시</th>
-				</tr>
-			</thead>
-			
-			
-			<tbody>
-			
-			<tr>
-				<td>${board.id}</td>
-				 
-				<td>${board.boardTitle}</td>
-					
-				<td>${board.boardContent}</td>
-				
-				<td>${board.boardName}</td>
-				
-				<td>${board.wdate}</td>
-				
-				<td>${board.udate}</td>	
-			</tr>
-				
-		</tbody>
+		<div>
+		<div style="float: left;">${board.boardName}</div>
 		
-		</table>
-		<c:if test="${member != null }">
+		<div style="float: right;"><fmt:formatDate value="${board.wdate}" pattern="yyyy-MM-dd HH:mm"/> / ${board.boardView }</div>
+		</div>
+		<hr style="background-color: white; height: 5px; margin: 0px;">
+	</div>
+	
+	<div style="width: auto%; height: auto;">
+		${board.boardContent}
+	</div>
+		<hr style="background-color: white; height: 5px; margin: 0px;">	
+		<span style="height: 10px; font-size: medium; float: left">
 			<a href="/board/check?id=${board.id }">수정</a>
+			<a> / </a>
 			<a href="/board/delete?id=${board.id }">삭제</a>
-		</c:if>
+			<a> / </a>
 			<a href="/board/listPage">게시판 가기</a>
-		<hr>
-			
-			<h2>트렌젝션 활용 댓글리스트</h2>
-				<c:forEach var="comment" items="${cList}">
-			<table id="board" border="1">
-			<thead>
-				<tr>
-					<th>댓글 번호</th>
-				
-				 	<th>게시글 번호</th>
-				
-				 	<th>댓글 제목</th>
-				
-				 	<th>댓글 내용</th>
-				
-				 	<th>댓글 작성자</th>
-				
-				 	<th>댓글 작성일시</th>
-				
-				 	<th>댓글 수정일시</th>
-				</tr>
-			</thead>
-			
-			<tbody>
-			<tr>
-				<td>${comment.id}</td>
-			
-				<td>${comment.boardId}</td>
-				 
-				<td>${comment.commentTitle}</td>
-					
-				<td>${comment.commentContent}</td>
-				
-				<td>${comment.commentName}</td>
-				
-				<td>
-				<fmt:formatDate value="${comment.wdate}" pattern="yyyy-MM-dd HH:mm" />
-				</td>
-				
-				<td>
-				<fmt:formatDate value="${comment.udate}" pattern="yyyy-MM-dd HH:mm" />
-				</td>	
-				
-			</tr>	
-				
-			</tbody>
-		<c:if test="${member != null }">
-			<a href="/board/check1?id=${comment.id }">수정</a>
-			<a href="/board/delete1?id=${comment.id }">삭제</a>
-		</c:if>
-			</table>
-		</c:forEach>
+		</span>
 		
-		</div>
-		<hr>
-
-		<h2 style="text-align: center;">댓글 작성</h2><br><br><br>	
-		<div style="width: 80%; margin: auto;">
-	  <form action="/board/insertcomment" method="post">
-  	게시글 번호 : <input type="number" name="boardId" value="${board.id }" readonly="readonly"> <br>
-  	댓글 작성자 : <input id="name" type="text" name="commentName" style="width: 30%;" placeholder="작성자"> <br>
- 	댓글 제목 : <input id="title" type="text" name="commentTitle" style="width: 50%;" placeholder="제목"> <br>
- 	댓글 PW : <input type="password" name="commentPassword" style="width: 50%;" placeholder="PW"> <br>  
-  <textarea style="width: 1000px; height: 200px"  id="content" rows="5" cols="50" name="commentContent" placeholder="content"></textarea> <br>
-  	<input type="submit" style="float: right;" value="작성">
-</form>
-		</div>
+	</section>
+			<hr>
+			
+			<h2>댓글 리스트</h2>
+				<section class="rounded-0" style="background-color: lightgray; width: auto; height: auto; padding: 20px;">
+				<c:forEach var="comment" items="${cList}">
+					<div style="height: auto; text-align: center;">
+					${comment.commentContent}
+					</div>
+					<div style="height: 20px;">
+						<div style="position: static; text-align:right; font-size: small; float: right">ID : ${comment.commentName} / DATE : 
+						<fmt:formatDate value="${comment.wdate}" pattern="yyyy-MM-dd HH:mm" />
+						</div>
+						
+				<span style="height: 10px; font-size: small; float: left">
+					<a href="/board/check1?id=${comment.id }">수정</a>
+					<a> / </a>
+					<a href="/board/delete1?id=${comment.id }">삭제</a>
+				</span>
+					</div>
+				<hr style="background-color: white; height: 5px; margin: 0px;">
+				</c:forEach>
+				</section>
 </body>
-<hr>
+		<hr>
+	<footer>	
 
-	<footer>
+		<h2 style="text-align: center;">댓글 작성</h2><br>
+		<section class="rounded-bottom" style="background-color: lightgray; width: auto; height: auto; padding: 20px;">
+	    <form action="/board/insertcomment" method="post">
+		<div style="width: auto; margin: 10px;">
+  	<div style="width: 25%; float: reft; text-align: reft;">
+  	<input type="hidden" name="boardId" value="${board.id}">
+  	NAME : <input id="name" type="text" name="commentName"> <br> <br>
+  	 	
+ 	PWord : <input type="password" name="commentPassword"> <br> <br>
+ 	</div>
+ 		<span style="height: 10px; font-size: small; float: left"></span>
+ 		<div>
+  <textarea style="width: 100%; height: auto; float: reft; text-align: reft;"  id="content" rows="5" cols="50" name="commentContent" placeholder="게시글 또는 댓글로 문의 부탁드립니다. 감사합니다.♥"></textarea>
+				</div>
+			</div>
+  	<input type="submit" style="float: right;" value="작성">
+		</form>
+	</section>
+
+
+	
 
 	</footer>
 </html>

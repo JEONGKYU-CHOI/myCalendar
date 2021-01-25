@@ -18,7 +18,7 @@ public interface BoardMapper {
 	//board
 	
 		//insert
-		@Insert("insert into board(board_title, board_content, board_name, board_password) values(#{boardTitle}, #{boardContent}, #{boardName}, #{boardPassword})")
+		@Insert("insert into board(board_title, board_content, board_name, board_password, board_view) values(#{boardTitle}, #{boardContent}, #{boardName}, #{boardPassword}, 0)")
 		public int insertBoard(Board board);
 
 		//delete
@@ -31,12 +31,12 @@ public interface BoardMapper {
 		public int updateBoard(Board board);
 		
 		//update
-		@Update("update board set board_title=#{boardTitle}, board_content=#{boardContent}, board_name=#{boardName}"
+		@Update("update board set board_title=#{boardTitle}, board_content=#{boardContent}, board_name=#{boardName}, udate=now()"
 				+ " where id=#{id}")
 		public int Boardupdate(Board board);
 		
 		//selectAll
-		@Select("select id, board_title, board_content, board_name, wdate from board")
+		@Select("select * from board")
 		public List<Board> selectAll();
 		
 		//selectById
@@ -60,6 +60,10 @@ public interface BoardMapper {
 		@Select("select * from comment order by id desc")
 		public List<Comment> CommentAll();
 		
+		//조회수
+		@Update("update board set board_view = board_view + 1 where id=#{id}")
+		public int updateView(int id);
+		 
 		
 		//page 
 		       

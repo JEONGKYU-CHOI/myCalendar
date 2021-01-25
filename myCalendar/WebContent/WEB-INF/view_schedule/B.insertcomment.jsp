@@ -18,7 +18,7 @@
  	댓글 제목 : <input id="title" type="text" name="boardTitle" style="width: 50%;"> 
   	댓글 내용 : <input id="name" type="text" name="boardName" style="width: 30%;"> <br>
   <textarea id="summernote" name="boardContent"></textarea>
-  	<input type="submit" style="float: right;" value="작성" onclick="Check(this.form)">
+  	<input type="submit" style="float: right;" value="작성">
 </form>
 
 	</div>

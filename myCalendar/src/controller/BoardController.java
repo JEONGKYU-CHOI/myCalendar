@@ -34,14 +34,7 @@ public class BoardController {
 	private BoardService boardservice;
 	@Autowired
 	private CommentService commentservice;
-	@GetMapping("/select")
-	public String selectBoard(Model m, Board board) {
-		
-		List<Board> bList = boardservice.selectBoard();
-		m.addAttribute("bList", bList);
 
-		return "B.boardList";
-	}
 	        
 //	board
 	       
@@ -124,11 +117,21 @@ public class BoardController {
 	}              
 	   
 	@PostMapping("/update")
-	public String updateBoard(Board board) {
+	public String updateBoard(Model m, Board board, @RequestParam(value = "num", defaultValue = "1")int num) {
 		boardservice.Boardupdate(board);
+		Page page = new Page();
+		
+		page.setNum(num);
+		page.setCount(boardservice.selectCount());
+		
+		List<Board> bList = boardservice.listPage(page.getDisplayPost(), page.getPostNum());
+		
+ 		m.addAttribute("bList", bList);
 
-		return "B.boardList";
-	}      
+		m.addAttribute("page", page);
+		m.addAttribute("select", num);
+		return "B.page";
+	}          
 	             
 	// 댓글     
 	                     
@@ -149,11 +152,21 @@ public class BoardController {
 	}
 	        
 	@PostMapping("/update1")     
-	public String updateBoard1(Comment comment) {
+	public String updateBoard1(Model m, Comment comment, @RequestParam(value = "num", defaultValue = "1")int num) {
 		System.out.println(comment + "2번");
 		commentservice.updateComment(comment);
+		Page page = new Page();
+		
+		page.setNum(num);
+		page.setCount(boardservice.selectCount());
+		
+		List<Board> bList = boardservice.listPage(page.getDisplayPost(), page.getPostNum());
+		
+ 		m.addAttribute("bList", bList);
 
-		return "B.boardList";
+		m.addAttribute("page", page);
+		m.addAttribute("select", num);
+		return "B.page";
 	}
 	     
 	
@@ -240,14 +253,14 @@ public class BoardController {
 		return "B.selectOne";
 	}
 	
-	@GetMapping("/oneform")
-	public String selectform(Model m, int id) {
-		Board board = boardservice.selectById(id);
-		
-		m.addAttribute("board", board);
-		
-		return "B.selectform";
-	}
+//	@GetMapping("/oneform")
+//	public String selectform(Model m, int id) {
+//		Board board = boardservice.selectById(id);
+//		
+//		m.addAttribute("board", board);
+//		
+//		return "B.selectform";
+//	}
 	
 	@GetMapping("/onecomment")
 	public String selectComment(Model m, int id) {
@@ -317,10 +330,10 @@ public class BoardController {
 //		return jsonObject;
 //	}
 	
-	@GetMapping("/login")
-	public String login1() {
-		return "B.login";
-	}
+//	@GetMapping("/login")
+//	public String login1() {
+//		return "B.login";
+//	}
 
 //	@PostMapping("/login")
 //	public String login(Login login, HttpServletRequest req, RedirectAttributes rttr) {

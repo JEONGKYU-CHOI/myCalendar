@@ -118,19 +118,16 @@ $(document).ready(function() {
  	<div style="width: 80%; margin: auto;">
 
   <form action="/board/insert" method="post">
- 	<input id="title" type="text" name="boardTitle" style="width: 50%;" placeholder="제목"> 
-  	<input id="name" type="text" name="boardName" style="width: 30%;" placeholder="작성자"> <br>
-  	<input type="password" name="boardPassword" style="width: 30%;" placeholder="비밀번호"> <br>
+ 	게시글 제목 : <input id="title" type="text" name="boardTitle" style="width: 50%;" placeholder="제목"> <br> 
+  	NAME : <input id="name" type="text" name="boardName" style="width: 30%;" placeholder="작성자">
+  	PW : <input type="password" name="boardPassword" style="width: 30%;" placeholder="비밀번호"> <br>
   	
   <textarea id="summernote" name="boardContent"></textarea>
-  	<input type="submit" style="float: right;" value="작성" onclick="Check(this.form)">
+  	<input type="submit" style="float: right;" value="작성">
 
 </form>
 
 	</div>
-	<hr>
-	
-	<body>
 
 </body>
 </html>

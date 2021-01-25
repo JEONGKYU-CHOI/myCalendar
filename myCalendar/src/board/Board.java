@@ -19,11 +19,12 @@ public class Board {
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm", timezone = "Asia/Seoul")
 	@DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
 	private Timestamp udate;
+	private int boardView;
 
 	public Board() {}
 
 	public Board(int id, String boardTitle, String boardContent, String boardName, String boardPassword,
-			Timestamp wdate, Timestamp udate) {
+			Timestamp wdate, Timestamp udate, int boardView) {
 		super();
 		this.id = id;
 		this.boardTitle = boardTitle;
@@ -32,6 +33,7 @@ public class Board {
 		this.boardPassword = boardPassword;
 		this.wdate = wdate;
 		this.udate = udate;
+		this.boardView = boardView;
 	}
 
 	public int getId() {
@@ -94,6 +96,14 @@ public class Board {
 	public String toString() {
 		return "Board [id=" + id + ", boardTitle=" + boardTitle + ", boardContent=" + boardContent + ", boardName="
 				+ boardName + ", boardPassword=" + boardPassword + ", wdate=" + wdate + ", udate=" + udate + "]";
+	}
+
+	public int getBoardView() {
+		return boardView;
+	}
+
+	public void setBoardView(int boardView) {
+		this.boardView = boardView;
 	}
 
 

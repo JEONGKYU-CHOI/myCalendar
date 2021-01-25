@@ -24,11 +24,7 @@ public class BoardService {
 		public int insertBoard(Board board) {
 			return boardMapper.insertBoard(board);
 		}
-		
-//		//img추가
-//		public int insertBoardImg(Board board) {
-//			return boardMapper.insertBoardImg(board);
-//		}
+
 		
 		//수정
 		public int updateBoard(Board board) {
@@ -65,6 +61,11 @@ public class BoardService {
 		//update
 		public int Boardupdate(Board board) {
 			return boardMapper.Boardupdate(board);
+		}
+		
+		//조회수
+		public int BoardView(int id) {
+			return boardMapper.updateView(id);
 		}
 		
 		//page
