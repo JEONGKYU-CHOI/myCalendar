@@ -47,7 +47,7 @@ public class BoardController {
 	}
 	           
 	@PostMapping("/insert")
-	public String insertBoard(Model m, @RequestParam(value = "num", defaultValue = "1")int num, Board board) {
+	public String insertBoard(Model m, RedirectAttributes rttr, @RequestParam(value = "num", defaultValue = "1")int num, Board board) {
 		Page page = new Page();
 		
 		page.setNum(num);
@@ -70,9 +70,10 @@ public class BoardController {
 		m.addAttribute("select", num);
 		boardservice.insertBoard(board);
 //		boardservice.insertBoardImg(board);
+		rttr.addFlashAttribute("result", "registerOK");
 		
-		
-		return "B.page";
+//		return "B.page";
+		return "redirect:/board/listPage";
 	}
 	
 	@PostMapping("/insertcomment")
