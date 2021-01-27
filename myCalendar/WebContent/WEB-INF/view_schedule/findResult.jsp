@@ -61,7 +61,6 @@ $(document).ready(function(){
 		cursor: pointer;
 		box-shadow: 0 2px 4px rgba(15, 34, 45, 0.3);
 	}
-
 </style>
 </head>
 <body onload="remove()">
