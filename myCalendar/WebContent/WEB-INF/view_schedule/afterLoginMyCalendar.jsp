@@ -48,12 +48,15 @@
       businessHours: true, // display business hours
       events:dataSet,
       eventClick:function(info){
-    	 var eventObj=info.event;
-    	 var eventId=eventObj.id;
-    	 console.log(eventId);
-    	 
-    	 var windowObj=window.open("popup?id="+eventId, "Question", "height: 100px, width: 100px");
-      },
+     	 var eventObj=info.event;
+     	 var eventId=eventObj.id;
+ 		
+     	 var _width='500';
+     	 var _height='190';    	 
+     	 var _left=Math.ceil((window.screen.width-_width)/2);
+     	 var _top='200';
+     	 var windowObj=window.open("popup?id="+eventId, "Question", 'width='+_width+', height='+_height+', left='+ _left+', top='+ _top);
+       },
       dateClick:function(info){
 
    	 	var Year=info.date.getFullYear();

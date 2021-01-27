@@ -6,6 +6,9 @@
 <meta charset="UTF-8">
 <title>MyCalendar</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <script type="text/javascript">
 	var title="${schedule.scheduleTitle}";
 	var start="${schedule.start}";
@@ -24,8 +27,14 @@
 	var endDateFinal=endDateCompare.getFullYear()+"년 "+(endDateCompare.getMonth()+1)+"월 "+endDateCompare.getDate()+"일 "+endDateCompare.getHours()+"시 "+endDateCompare.getMinutes()+"분";
 	
 	document.write('일정 이름: '+title+'<br>'+'시작 시간: '+startDateFinal+'<br>'+'종료 시간: '+endDateFinal+'<br>');
-
 </script>
+<style>
+	body {
+	    margin: 20;
+	    padding: 0;
+	    font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
+	}
+</style>
 </head>
 <body>
 	

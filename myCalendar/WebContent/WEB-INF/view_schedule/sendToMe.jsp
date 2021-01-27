@@ -7,6 +7,9 @@
 <title>MyCalendar</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <script type="text/javascript">
 	var title="${schedule.scheduleTitle}";
 	var start="${schedule.start}";
@@ -26,12 +29,29 @@
 
 	var text="일정 이름: "+title+", 시작 시간: "+startDateFinal+", 종료 시간: "+endDateFinal;
 </script>
+<style>
+	body {
+	    margin: 0;
+	    padding: 0;
+	    font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
+	}
+	
+	div {
+		padding-top: 20px;
+		display: block;
+		margin: 0 auto;
+		width: 490px;
+		text-align: center;
+	}
+</style>
 </head>
 <body>
+	<div>
 	<h3>나에게 보내시려면 아래의 아이콘을 클릭해 주세요.</h3>
 	<a href="javascript:;" id="kakao-link-btn">
 	<img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDA3MTRfMjI5%2FMDAxNTk0NzI5NzcyMDMz.X2YVWOeE6fwrOSnUiARthmNM9a4mfRnneetw1hTtyHIg.1Tqwf_4qgAqc1v3jE6xbzobcrV3X6yN8JVUVwjlRGkog.JPEG.xuni1021%2F%25C4%25AB%25C4%25AB%25BF%25C0%25C5%25E5-%25B7%25CE%25B0%25ED-ai-3.jpg&type=sc960_832" width="70px" />
 	</a><br>
+	</div>
 </body>
 <script type="text/javascript">
   //<![CDATA[
