@@ -54,6 +54,10 @@ $(document).ready(function(){
 			return false;
 		}		
 	});
+	
+	$('#deletebutton').on('click', function(){
+		alert('정말 삭제하시겠습니까?');
+	});
 });
 </script>
 <style>
