@@ -20,10 +20,7 @@
 		}
 		
 		var userId=getParameterByName('userId');
-		console.log(userId);
-		var defaultDate=getParameterByName('defaultDate');
-		console.dir(defaultDate);
-		
+		var defaultDate=getParameterByName('defaultDate');		
 		
 		var inputUserId=$('#num')[0];
 		inputUserId.value=userId;
@@ -79,8 +76,7 @@
 			var endDateCompare=new Date(endDateArr[0], (endDateArr[1])-1, endDateArr[2], endDateArr[3], endDateArr[4], 0, 0, 0);
 			
 			if(startDateCompare.getTime() > endDateCompare.getTime()){
-				
-				
+
 				var result=$('#rs');
 				rs.innerHTML="<h3 style='color: red'>시작 시간이 종료 시간을 앞설 수 없습니다.</h3>";
 				

@@ -124,13 +124,13 @@
     padding: 8px 12px;
   }
   
-  .navbar_logo li:hover{
+  #QA:hover{
     background-color: #b1bfca;
   	border-radius: 4px;
   }
     
   #QA{
-  	padding: 0px 40px;
+  	padding: 8px 40px;
     font-size: 16px;
   }
   
