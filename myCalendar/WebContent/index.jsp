@@ -53,6 +53,7 @@
     max-width: 900px;
     margin: 0 auto;
     padding-top: 80px;
+    padding-bottom: 80px;
   }
   
   .fc-day-top.fc-sun.fc-past, .fc-day-top.fc-sun.fc-future {
@@ -69,7 +70,7 @@
   	aligh-items: center;
   	background-color: #0F222D;
     padding: 8px 12px;
-    mid-width: 900px;
+    min-width: 900px;
     position: sticky;
     top: 0;
     z-index: 2;
@@ -78,6 +79,10 @@
   a{
   	text-decoration: none;
   	color: white;
+  }
+  
+  footer{
+  	border-top: 1px solid #bdbdbd;
   }
   
   .navbar_logo{
@@ -117,6 +122,23 @@
   	background-color: #b1bfca;
   	border-radius: 4px;
   }
+  
+  .footer{
+  	min-width: 900px;
+  	margin: 0px;
+  	padding: 10px 30px 10px 30px;
+  	list-style: none;
+  	display: flex;
+  }
+  
+  footer>ul>li{
+  	margin: 5px;
+  	padding: 5px;
+  }
+  
+  footer>ul>li>a {
+  	color: black;
+  }
 </style>
 </head>
 <body>
@@ -128,7 +150,6 @@
 		</li>
 		<li><a id="QA" href="${pageContext.request.contextPath}/board/listPage">Q&A</a></li>
   	</ul>
-  	
   	<ul class="navbar_icons">
   		<li><a href="${pageContext.request.contextPath}/user/login"><i class="fas fa-sign-in-alt"></i></a></li>
   		<li><a href="${pageContext.request.contextPath}/user/add"><i class="fas fa-user-plus"></i></a></li>
@@ -137,5 +158,9 @@
   </nav>
   <div id='calendar'></div>
   <footer>
-  
+  	<ul class="footer">
+  		<li><a href="#">이용약관</a></li>
+	  	<li><a href="#">개인정보처리방침</a></li>
+	  	<li><a href="#" style="font-weight: bold">ⓒmyCalendar</a></li>
+  	</ul>
   </footer>
