@@ -34,6 +34,9 @@
 //    navLinks: true, // can click day/week names to navigate views
       businessHours: true, // display business hours
       editable: true,
+      dateClick:function(){
+    	  alert('로그인 후 서비스를 이용해 보세요!');
+      }
     });
     calendar.render();
   });

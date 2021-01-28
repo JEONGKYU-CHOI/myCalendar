@@ -32,7 +32,7 @@ $(document).ready(function(){
 			var result=$('#rs');
 			rs.innerHTML="<h3 style='color: red'>시작 시간과 종료 시간은 같을 수 없습니다.</h3>";
 			
-			$('#end').focus();
+			$('#start').focus();
 			return false;
 		}
 		
@@ -48,9 +48,9 @@ $(document).ready(function(){
 		
 		if(startDateCompare.getTime() > endDateCompare.getTime()){
 			var result=$('#rs');
-			rs.innerHTML="<h3 style='color: red'>시작 시간이 종료 시간을 앞설 수 없습니다.</h3>";
+			rs.innerHTML="<h3 style='color: red'>종료 시간이 시작 시간을 앞설 수 없습니다.</h3>";
 			
-			$('#start').focus();
+			$('#end').focus();
 			return false;
 		}		
 	});
