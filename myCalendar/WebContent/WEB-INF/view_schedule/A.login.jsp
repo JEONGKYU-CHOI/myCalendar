@@ -5,6 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<!--반응형 웹 메타태그  -->
+<meta name="viewport" content="width=device-width", initial-scale="1">
+
 <title>login</title>
 <style>
 
