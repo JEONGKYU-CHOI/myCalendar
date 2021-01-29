@@ -6,9 +6,118 @@
 <head>
 <meta charset="UTF-8">
 <title>userReg</title>
+
+<style type="text/css">
+body {
+		background-size:cover;
+		background-image: url('${pageContext.request.contextPath}/bg_02.jpeg');
+		background-color:#17a2b8;
+		background-repeat: no-repeat;
+	    margin: 0;
+	    padding: 0;
+	    font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
+	}
+	
+/* #container{
+		position:absolute;
+		width:400px;
+		height:400px; 
+		background-color:white;
+		text-align :right; 
+		margin-right:50px;
+		margin-left: 0 auto;
+		margin-top: -150px;
+		padding-left:-100px;
+		padding-right:50px;
+		left: 30%;
+		top:50%; 
+		border-radius:10px;
+} */
+
+#container{
+		position:absolute;
+		width:400px;
+		height:400px;
+		background-color:white;
+		text-align :center;
+		/* margin-left: 0 auto; */
+		margin-left:-200px;
+		margin-top: -200px;
+		left: 50%;
+		top:50%;
+		border-radius:10px;
+		padding-top:50px;
+	}
+	
+/* #usertable{
+		width:100%;
+		table-layout:fixed;
+		border-collapse:collapse;
+		border:1px solid #168;
+		text-align:left;
+	
+} */
+button[type=button]  {
+		font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
+		width: 150px;
+		height: 40px;
+		background-color: tomato;
+		color: white;
+		font-size: 16px;
+		border-radius: 5px;
+		box-shadow: 0 4px 16px rgba(15, 34, 45, 0.3);
+		margin-bottom: 10px;
+	}
+
+.btn {
+		font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
+		width: 150px;
+		height: 40px;
+		background-color: #0F222D;
+		color: white;
+		font-size: 16px;
+		border-radius: 5px;
+		box-shadow: 0 4px 16px rgba(15, 34, 45, 0.3);
+		margin-bottom: 10px;
+	}
+
+div.form-group{
+		text-align:right;
+		padding-right:100px;
+}
+	
+input.form-control{
+		width:50%;
+		padding: 7px 10px;
+		margin:5px 0;
+		display:inline-block;
+		border: 1px soolid #ccc;
+		box-sizing:border-box;
+		border-radius:4px;
+		text-align:center;
+		
+}	
+	label{
+		font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
+		font-size: 14px;
+		color: #0F222D;
+		vertical-align: middle;
+		/* text-align:center; */
+		
+	}	
+
+h2{
+	color: #0F222D;
+	test-align:center;
+	
+}
+	
+</style>
+
 </head>
 <body>
 
+<div id="container">
 <form action="${pageContext.request.contextPath}/user/add" method="post">
 <!-- 컨텍스트패스 추가함.-->
 <!-- 아이디 -->
@@ -22,13 +131,13 @@
 	<!-- 비밀번호-->
 	<div class="form-group">
 		<label for="user_pwd">비밀번호</label>
-		<input type="password" class="form-control" id="pwd1" name="password" placeholder="패스워드" required>
+		<input type="password" class="form-control" id="pwd1" name="password" placeholder="비밀번호" required>
 		<div class="check-font" id="pwd_check"></div>			
 	</div>
 	<!-- 비밀번호재확인-->
 	<div class="form-group">
-		<label for="user_pwd2">비밀번호 재확인</label>
-		<input type="password" class="form-control" id="pwd2" name="password2" placeholder="패스워드" required>
+		<label for="user_pwd2">재확인</label>
+		<input type="password" class="form-control" id="pwd2" name="password2" placeholder="비밀번호 재확인" required>
 		<div class="check-font" id="pwd2_check"></div>			
 	</div>
 
@@ -40,8 +149,8 @@
 	</div>
 	<!-- 휴대전화--> 
 	<div class="form-group">
-		<label for="user_phone">휴대폰번호('-'를 포함해서 입력해주세요)</label>
-			<input type="tel" class="form-control" id="phone" name="phone" placeholder="휴대폰번호">
+		<label for="user_phone">휴대폰</label>
+			<input type="tel" class="form-control" id="phone" name="phone" placeholder="'-'를 포함해서 입력해주세요">
 		<div class="check-font" id="phone_check"></div>			
 	</div>
 	<!--본인확인 이메일--> 
@@ -51,14 +160,19 @@
 		<div class="check-font" id="email_check"></div>			
 	</div>
 	<div class="reg_button">
-		<a class="btn btn-danger px-3" href="${pageContext.request.contextPath}">
-			<i class="fa fa-rotate-right pr-2" aria-hidden="true"></i> 취소하기
-		</a>&emsp;&emsp;
-		<button class="btn btn-primary px-3" id="reg_submit">
+		
+		<!-- <button class="btn btn-primary px-3" id="reg_submit">
 			<i class="fa fa-heart pr-2" aria-hidden="true"></i>가입하기
+		</button> -->
+		<button type="button" onclick="location.href='${pageContext.request.contextPath}'">취소</button>
+		<button class="btn" id="reg_submit">
+			<i class="fa fa-heart pr-2" aria-hidden="true"></i>가입
 		</button>
 	</div>
 </form>
+</div>
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script type="text/javascript">
@@ -174,7 +288,7 @@
 						
 					}else if(id == ""){
 						
-						$("#id_check").text("id를 입력해주세요");
+						$("#id_check").text("아이디를 입력해주세요");
 						$("#id_check").css("color","red");
 						$("#reg_submit").attr("disabled", true);
 						

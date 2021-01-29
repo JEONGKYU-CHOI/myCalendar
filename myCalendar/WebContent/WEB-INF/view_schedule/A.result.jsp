@@ -5,9 +5,112 @@
 <head>
 <meta charset="UTF-8">
 <title>registration result</title>
+<style type="text/css">
+body {
+		background-size:cover;
+		background-image: url('${pageContext.request.contextPath}/bg_02.jpeg');
+		background-color:#17a2b8;
+		background-repeat: no-repeat;
+	    margin: 0;
+	    padding: 0;
+	    font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
+	}
+	
+#container{
+		position:absolute;
+		width:400px;
+		height:400px;
+		background-color:white;
+		text-align :center;
+		/* margin-left: 0 auto; */
+		margin-left:-200px;
+		margin-top: -200px;
+		left: 50%;
+		top:50%;
+		border-radius:10px;
+		padding-top:50px;
+	}
+
+button[type=button]  {
+		font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
+		width: 150px;
+		height: 40px;
+		background-color: #0F222D;
+		color: white;
+		font-size: 15px;
+		border-radius: 5px;
+		box-shadow: 0 4px 16px rgba(15, 34, 45, 0.3);
+		margin-bottom: 10px;
+	}
+
+.btn {
+		font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
+		width: 150px;
+		height: 40px;
+		background-color: #0F222D;
+		color: white;
+		font-size: 16px;
+		border-radius: 5px;
+		box-shadow: 0 4px 16px rgba(15, 34, 45, 0.3);
+		margin-bottom: 10px;
+	}
+/* input{
+		border-radius:4px;
+		border:1px grey solid;
+		position:relative;
+		display:inline;
+		
+		
+	} */
+	
+fieldset,legend{
+		width:80%;
+		padding: 7px 10px;
+		margin:5px 0;
+		display:inline-block;
+		border: 1px soolid #ccc;
+		box-sizing:border-box;
+		border-radius:4px;
+		text-align:center;
+		
+}	
+/* 	label{
+		font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
+		font-size: 14px;
+		color: #0F222D;
+		vertical-align: middle;
+		text-align:center;
+		
+	}	
+ */
+
+a{
+	text-decoration:none;
+}	
+a:focus {
+	outline: none !important;
+	}
+
+	a:hover {
+		text-decoration: none;
+		color: white;
+	    border-color: #fc00ff;
+	}
+
+
+h2{
+	color: #0F222D;
+	test-align:center;
+	
+}
+	
+</style>
+
 </head>
 <body>
-회원가입을 환영합니다!
+
+<div id="container">
+<h2>회원가입을 환영합니다!</h2>
 <fieldset>
 	<legend>회원 가입 상세 내용</legend>
 	회원번호:${user.number} <br>
@@ -18,13 +121,8 @@
 	
 </fieldset>
 
-<hr>
-<!-- 우선 마이페이지 기능을 넣자 -->
-<!-- 	<p><a href="/user/update">회원수정</a></p>
-	<p><a href="/user/viewUser">회원상세보기</a></p>
-	<p><a href="/user/delete">회원탈퇴</a></p> -->
-	<p><a href="${pageContext.request.contextPath}/user/login">로그인하기</a></p>
-<!-- 컨텍스트패스 추가함.-->
+	<button type="button"><a href="${pageContext.request.contextPath}/user/login">로그인하기</a></button>
 
+</div>
 </body>
 </html>
