@@ -33,8 +33,26 @@
 	    font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
 	}
 	
-	div {
-		padding-top: 30px;
+	#container{
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+	}
+	
+	#container::after{
+		width: 100%;
+		height: 100%;
+		background: url("../bg.jpg");
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		opacity: 0.5;
+	}
+	
+	#content{
+		padding: 100px;
 		display: block;
 		margin: 0 auto;
 		width: 800px;
@@ -68,11 +86,13 @@
 </style>
 </head>
 <body>
-  <div>
-  <p id="rs"></p>
+  <div id="container">
+  <div id="content">
   <form action="${pageContext.request.contextPath}/schedule/afterLogin?num=<%=userId %>" method="post">
+		<p id="rs"></p>	
 		<input type="submit" class="button" value="메인으로 돌아가기">
   </form>
+  </div>
   </div>
 </body>
 </html>
