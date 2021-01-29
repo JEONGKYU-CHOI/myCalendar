@@ -79,10 +79,6 @@
 		cursor: pointer;
 		box-shadow: 0 2px 4px rgba(15, 34, 45, 0.3);
 	}
-	
-	#deletebutton{
-		margin-top: -50px;
-	}
 </style>
 </head>
 <body>

@@ -36,8 +36,26 @@
 	    font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
 	}
 	
-	div {
-		padding-top: 30px;
+	#container{
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+	}
+	
+	#container::after{
+		width: 100%;
+		height: 100%;
+		background: url("../bg.jpg");
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		opacity: 0.5;
+	}
+	
+	#content{
+		padding: 100px;
 		display: block;
 		margin: 0 auto;
 		width: 800px;
@@ -45,7 +63,7 @@
 	}
 	
 	.button {
-     	font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
+	    font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
 		width: 150px;
 		height: 40px;
 		background-color: #0F222D;
@@ -64,18 +82,16 @@
 		cursor: pointer;
 		box-shadow: 0 2px 4px rgba(15, 34, 45, 0.3);
 	}
-	
-	#deletebutton{
-		margin-top: -50px;
-	}
 </style>
 </head>
 <body>
-  <div>
+  <div id="container">
+  <div id="content">
   <p id="rs"></p>
     <form action="${pageContext.request.contextPath}/schedule/afterLogin?num=<%=userId %>" method="post">
 		<input type="submit" class="button" value="메인으로 돌아가기">
 	</form>
+  </div>
   </div>
 </body>
 </html>
