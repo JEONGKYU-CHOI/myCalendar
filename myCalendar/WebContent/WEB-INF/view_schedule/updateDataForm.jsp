@@ -235,6 +235,7 @@ $(document).ready(function(){
 			<option value="blue">blue</option>
 			<option value="purple">purple</option>
 			<option value="#ff93c1">pink</option>
+			<option value="black">black</option>
 		</select><br>
 		<p id="rs"></p>
 		<br>
