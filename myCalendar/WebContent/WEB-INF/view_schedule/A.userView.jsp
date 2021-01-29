@@ -5,21 +5,85 @@
 <head>
 <meta charset="UTF-8">
 <title>회원 정보 상세 페이지</title>
+
+<style type="text/css">
+body {
+		background-size:cover;
+		background-image: url('${pageContext.request.contextPath}/bg_02.jpeg'); 
+		background-color: #FCF1DC;/*#59444C;/*#0F222D;/*#231826;/* #2A192F; */
+		background-repeat: no-repeat;
+	    margin: 0;
+	    padding: 0;
+	    font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
+	
+	}
+	
+/* #container{
+		position:absolute;
+		width:400px;
+		height:400px; 
+		background-color:white;
+		text-align :center;
+		margin-left: 0 auto;
+		margin-top: -150px;
+		left: 30%;
+		top:50%; 
+		border-radius:10px;
+} */
+
+	#container{
+		position:absolute;
+		width:400px;
+		height:400px;
+		background-color:white;
+		text-align:center; 
+		/* margin-left: 0 auto; */
+		margin-left:-200px;
+		margin-top: -200px;
+		left: 50%;
+		top:50%;
+		border-radius:10px;
+	}
+
+#usertable{
+		width:100%;
+		table-layout:fixed;
+		border-collapse:collapse;
+		/* border:1px solid #168; */
+		text-align:left;
+	
+}
+input[type=button] {
+		font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
+		width: 150px;
+		height: 40px;
+		background-color: #0F222D;
+		color: white;
+		font-size: 16px;
+		border-radius: 5px;
+		box-shadow: 0 4px 16px rgba(15, 34, 45, 0.3);
+		margin-bottom: 10px;
+	}
+
+h2{
+	color: #0F222D;
+	text-align:center;
+	
+}
+
+</style>	
 </head>
+
 <body>
 <%--  <%@ include file="../include/user_menu.jsp" %> --%>
 
+<div id="container">
 <h2>회원 정보 상세 내용</h2>
-<!-- 컨텍스트패스 추가함.-->
+<!-- 컨텍스트패스 추가함.--> 
 <form action="${pageContext.request.contextPath}/user/viewUser" name="form1" method="post">
-<%-- 
-	회원번호:${user.number} <br>
-	이름: ${user.name} <br>
-	회원 아이디 :${user.id} <br>
-	전화번호 :${user.phone} <br>
-	이메일:${user.email} <br> --%>
+
 	
-	<table border=1 width="400px">
+	<table id="usertable" border=1 width="400px">
 	<tr>
 		<td>회원번호</td>
 		<!-- 수정 불가능하도록 readonly 속성추가함 -->
@@ -48,23 +112,18 @@
 		<td><input name="phone" value="${user.phone}"></td>
 	</tr>
 	<tr>
-		<td colspan="2" align="center">
+		<td colspan="2" align="center" valign="middle">
 			<input type="button" value="회원 정보 수정" id="btnUpdate">
-	<%-- <a href="delete?number=${user.number}"><input type="button" value="회원 탈퇴" id="btnDelete"></a> --%>
-	<%-- 	<input type="button" value="${user.number}" id="btnDelete" > --%>
 			<input type="button" value="회원탈퇴" id="btnDelete" >
-	
-	<%-- 	<a href="delete?number=${user.number}"><input type="button" value="회원탈퇴" id="btnDelete" ></a> --%>
-	<%-- <button><a href="delete?number=${user.getNumber()}">${user.getNumber()} 회원번호 회원탈퇴</a></button> --%>
-	<%-- <div style="color:red">${message}</div> --%>
-		</td>
+	    </td>
 	</tr>
-	
-	
-	</table>
+</table>
 <br>
 <p><a href="${pageContext.request.contextPath}/user/test">마이페이지로</a></p>
 </form>
+</div>
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
 var number = $("#number").val();

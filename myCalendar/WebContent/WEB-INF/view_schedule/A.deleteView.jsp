@@ -8,6 +8,32 @@
 <head>
 <meta charset="UTF-8">
 <title>deleteView</title>
+<style>
+	body {
+		background-size:cover;
+		background-image: url('${pageContext.request.contextPath}/bg_02.jpeg'); 
+		background-color: #FCF1DC;/*#59444C;/*#0F222D;/*#231826;/* #2A192F; */
+		background-repeat: no-repeat;
+	    margin: 0;
+	    padding: 0;
+	    font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
+	
+	}
+	
+	div {
+		padding-top: 30px;
+		display: block;
+		margin: 0 auto;
+		width: 800px;
+		text-align: center;
+	}
+	h2{
+	color: #0F222D;
+	text-align:center;
+	}
+
+	
+</style>
 </head>
 <body>
 <h2>회원 탈퇴</h2>
