@@ -115,6 +115,7 @@ public class UserController {
 		return "A.main";
 	}
 	
+
 	
 	@RequestMapping(value="/logout", method = RequestMethod.GET)
 	public String logout(User user, Model model, HttpSession session) {
