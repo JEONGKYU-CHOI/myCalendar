@@ -233,29 +233,49 @@ public class BoardController {
 		return "B.selectOne";
 	}
 	
-	
-	@GetMapping("/title")
-	public String Title(Model m, Board board, String boardTitle) {
-
-		
-		List<Board> TList = boardservice.selectTitle(boardTitle);
-		m.addAttribute("TList", TList);
-
-		return "B.titleList";
-	}
-	
-	@GetMapping("/one")
-	@Transactional
+	@GetMapping("/one")      
+	@Transactional  
 	public String selectOne(Model m, int id) {
 		Board board = boardservice.selectById(id);
 		m.addAttribute("board", board);
 		System.out.println(board);
+		boardservice.BoardView(id);
 		List<Comment> cList = commentservice.selectBoardId(id);
 		m.addAttribute("cList", cList);
 		System.out.println(cList);
 		
 		return "B.selectOne";
 	}
+//	@GetMapping("/title")
+//	public String Title(Model m, Board board, String boardTitle) {
+//
+//		
+//		List<Board> TList = boardservice.selectTitle(boardTitle);
+//		m.addAttribute("TList", TList);
+//
+//		return "B.titleList";
+//	}
+	
+	@GetMapping("/title")
+	@Transactional
+	public String listSearch(Model m, Board board, @RequestParam(value = "boardTitle", required = false, defaultValue = "")String boardTitle, @RequestParam(value = "num", defaultValue = "1")int num) {
+		Page page = new Page();
+		
+		page.setNum(num);
+		page.setCount(boardservice.countTitle(boardTitle));
+		
+		page.setBoardTitle(boardTitle);
+//		page.setBoardTitle(boardservice.listTitle(displayPost, postNum, boardTtile));
+		List<Board> TList = boardservice.listTitle(page.getDisplayPost(), page.getPostNum(), boardTitle);
+		m.addAttribute("TList", TList);
+		     
+		m.addAttribute("page", page);
+		m.addAttribute("select", num);          
+		
+//		m.addAttribute("boardTitle", boardTitle);
+//		System.out.println(TList);
+		return "B.titleList";
+	} 
 	
 //	@GetMapping("/oneform")
 //	public String selectform(Model m, int id) {

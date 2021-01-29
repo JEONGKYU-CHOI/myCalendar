@@ -75,6 +75,9 @@ public class BoardService {
 			return boardMapper.selectCount();
 		}
 		
+		public int countTitle(String boardTitle) {
+			return boardMapper.countTitle(boardTitle);
+		}
 		//HashMap
 		public List<Board> listPage(int displayPost, int postNum){
 			
@@ -83,5 +86,17 @@ public class BoardService {
 			data.put("postNum", postNum);
 			
 			return boardMapper.listPage(data); 
+		}
+		
+		
+		public List<Board> listTitle(int displayPost, int postNum, String boardTtile){
+			HashMap<String, Object> data = new HashMap<String, Object>(); 
+			data.put("displayPost", displayPost);
+			data.put("postNum", postNum);
+			data.put("boardTitle", boardTtile);
+			
+			
+			return boardMapper.selectTitle(data);
+      
 		}
 }

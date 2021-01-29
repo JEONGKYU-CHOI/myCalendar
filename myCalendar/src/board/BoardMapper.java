@@ -71,6 +71,15 @@ public interface BoardMapper {
 		@Select("select count(*) from board")
 		public int selectCount();     
 
+		//selectTitle
+		@Select("select count(*) from board where board_title like CONCAT('%',#{boardTitle},'%')")
+		public int countTitle(String boardTitle);
+		
+		//검색 구현
+		//selectByTitle
+		@Select("select * from board where board_title like CONCAT('%',#{boardTitle},'%') order by id desc limit #{displayPost}, #{postNum}")
+		public List<Board> selectTitle(HashMap<String, Object>hashMap);
+		
 		//listpage
 		@Select("select * from board order by id desc limit #{displayPost}, #{postNum}")
 		public List<Board> listPage(HashMap<String, Integer>hashMap);

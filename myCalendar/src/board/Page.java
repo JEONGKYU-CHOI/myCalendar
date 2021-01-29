@@ -96,5 +96,25 @@ public class Page {
 			displayPost = (num - 1) * postNum;
 		}
 	
+		private String boardSH;
+		
+		public String getBoardSH() {
+			 if(boardTitle.equals("")) {
+				  return ""; 
+				 } else {
+				  return "&boardTitle=" + boardTitle;
+				 }
+		}
+
+		public String getBoardTitle() {
+			return boardTitle;
+		}
+
+		public void setBoardTitle(String boardTitle) {
+			this.boardTitle = boardTitle;
+		}
+
+		private String boardTitle;
+		
 	
 }
