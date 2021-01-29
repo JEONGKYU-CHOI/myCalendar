@@ -6,26 +6,158 @@
 <head>
 <meta charset="UTF-8">
 <title>login</title>
+<style>
+
+	body {
+		background-image: url('${pageContext.request.contextPath}/bg-01.jpg');
+		background-color:#17a2b8;
+		background-repeat: no-repeat;
+	    margin: 0;
+	    padding: 0;
+	    font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
+	}
+	
+	h2{
+		font-family: Poppins-Regular;
+		margin: 0px;
+	}
+	
+	div{
+		padding-top: 30px;
+		display: block;
+		margin: 0 auto;
+		width: 800px;
+		text-align: center; 
+	}
+	
+	#container{
+		position:absolute;
+		width:400px;
+		height:400px;
+		background-color:white;
+		/* text-align :center; */
+		margin-left: 0 auto;
+		margin-top: -150px;
+		left: 50%;
+		top:50%;
+		border-radius:10px;
+	}
+	
+	input{
+		border-radius:4px;
+		border:1px grey solid;
+	}
+	
+	input[type=text]{
+		width:80%;
+		padding: 12px 20px;
+		margin:8px 0;
+		display:inline-block;
+		border: 1px soolid #ccc;
+		box-sizing:border-box;
+	}
+	
+	input[type=password]{
+		width:80%;
+		padding: 12px 20px;
+		margin:8px 0;
+		display:inline-block;
+		border: 1px soolid #ccc;
+		box-sizing:border-box;
+	}
+	
+	input[type=submit]{
+		width:80%;
+		height:55px;
+		font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;	
+		color: white;
+		background-color:rgba(15, 34, 45, 0.9); /* #fff59d;/* #0F222D; */
+		border:none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+	
+
+	.kakaoImg{
+		position:relative;
+		/* display:block;  */
+		margin-left: -400px; 
+		margin-right:auto;
+		/* margin:0px auto; */
+	}
+	
+	a:focus {
+	outline: none !important;
+	}
+
+	a:hover {
+		text-decoration: none;
+		color: #fc00ff;
+	    border-color: #fc00ff;
+	}
+	
+	
+	span{
+		font-family: Poppins-Regular;
+		font-size: 12px;
+		line-height: 1;
+		color: #666666;
+		margin: 0px;
+		text-align: left;
+	    margin-left: 50px;
+	}
+	a{
+	 	text-decoration:none;
+	}
+	
+	#spancl1{
+		text-align:left;
+		position:left;
+		margin-right:150px;
+		margin-left:0px;
+	}
+	
+	 #spancl2{
+		text-align:left;
+		position:left;
+		margin-right:120px;
+		margin-left:0px;
+	}
+</style>
 </head>
 <body>
-<h1>로그인</h1>
+<div id= container>
+<h2>로그인</h2>
 	<!-- 컨텍스트패스 추가함.-->
 	<form action="${pageContext.request.contextPath}/user/loginUser" method="post">
 	<font color="red">${message}</font><br>
-		ID:<input type="text" name="id"><br>
-		비밀번호:<input type="password" name="password"><br>
-		<input type="submit" value="login">
+		<span id="spancl1">아이디</span> &nbsp;&nbsp; <span><a href="${pageContext.request.contextPath}/user/findId"> 아이디 찾기</a></span>
+			<input type="text" name="id"><br>
+			<span id="spancl2">비밀번호</span><span><a href="${pageContext.request.contextPath}/user/changePw">비밀번호 변경하기</a></span>
+			
+			<input type="password" name="password"><br>
+			<input type="submit" value="로그인">
+		
 	</form>
 
-<div id="kakaoLogin">
+<!-- <div id="kakaoLogin">
 	<a id="kakao-login-btn">
 	<img src="https://www.gb.go.kr/Main/Images/ko/member/certi_kakao_login.png" style="height:60px;width:auto"/>
 	</a>
 	<a href="http://developers.kakao.com/logout"></a>
-</div>	
-
-	<a href="${pageContext.request.contextPath}/user/findId">아이디 찾기</a><br>
-	<a href="${pageContext.request.contextPath}/user/changePw">비밀번호 변경하기</a><br>
+</div>	 -->
+	<div id="kakaoLogin">
+		<a id="kakao-login-btn">
+		<img class="kakaoImg" src="https://www.gb.go.kr/Main/Images/ko/member/certi_kakao_login.png" style="height:60px;width:40%"/>
+		</a>
+		<a href="http://developers.kakao.com/logout"></a>
+	
+	</div>	
+<%-- 
+	<a href="${pageContext.request.contextPath}/user/findId"> /아이디 찾기</a><br>
+	<a href="${pageContext.request.contextPath}/user/changePw">/비밀번호 변경하기</a><br>
+ --%>
+</div>
 	
 <script src = "//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
