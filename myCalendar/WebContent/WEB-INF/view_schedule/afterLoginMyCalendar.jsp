@@ -114,6 +114,7 @@
   }
   
   footer{
+    letter-spacing: -1px;
   	border-top: 1px solid #bdbdbd;
   }
   
@@ -158,7 +159,7 @@
   .footer{
   	min-width: 900px;
   	margin: 0px;
-  	padding: 10px 30px 10px 30px;
+  	padding: 15px 30px 15px 30px;
   	list-style: none;
   	display: flex;
   }

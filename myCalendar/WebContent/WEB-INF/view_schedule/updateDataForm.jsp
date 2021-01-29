@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/f95cd7a2ae.js" crossorigin="anonymous"></script>
 <script type="text/javascript">
 
 $(document).ready(function(){
@@ -64,13 +65,12 @@ $(document).ready(function(){
 	body {
 	    margin: 0;
 	    padding: 0;
-	    font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
+	    font-family: Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
 	}
 	
 	input {
 		width: 250px;
 		font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;	
-		margin-bottom: 5px;
 		padding: 5px;
 	}
 	
@@ -80,7 +80,9 @@ $(document).ready(function(){
 	}
 	
 	div {
-		padding-top: 30px;
+	    font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
+		padding-top: 120px;
+		padding-bottom: 120px;
 		display: block;
 		margin: 0 auto;
 		width: 800px;
@@ -89,6 +91,65 @@ $(document).ready(function(){
 	
 	label{
 		margin-right: 10px;
+	}
+	
+	a{
+	  	text-decoration: none;
+	  	color: white;
+    }
+    
+    h2{
+    	margin: 0;
+    }
+	
+	.navbar{
+	  	display: flex;
+	  	justify-content: space-between;
+	  	aligh-items: center;
+	  	background-color: #0F222D;
+	    padding: 8px 12px;
+	    min-width: 900px;
+	    position: sticky;
+	    top: 0;
+	    z-index: 2;
+ 	}
+ 	 
+   .navbar_logo{
+	  	list-style: none;
+		color: white;
+		display: flex;
+		padding: 0;
+	}
+  
+	.navbar_logo li{
+	    font-size: 24px;
+	    padding: 8px 12px;
+	}
+	  
+	#QA:hover{
+	    background-color: #b1bfca;
+	  	border-radius: 4px;
+	}
+	    
+	#QA{
+	  	padding: 8px 40px;
+	    font-size: 16px;
+	}
+	  
+	.navbar_icons{
+	  	list-style: none;
+		color: white;
+		display: flex;
+	}
+	  
+	.navbar_icons li{
+	    font-size: 24px;
+	    padding: 8px 12px;
+	}
+	  
+	.navbar_icons li:hover{
+	  	background-color: #b1bfca;
+	  	border-radius: 4px;
 	}
 	
 	.button {
@@ -115,14 +176,54 @@ $(document).ready(function(){
 	#deletebutton{
 		margin-top: -50px;
 	}
+	
+	footer{
+		letter-spacing: -1px;
+  		border-top: 1px solid #bdbdbd;
+    }
+  
+	.footer{
+	  	min-width: 900px;
+	  	margin: 0px;
+	  	padding: 15px 30px 15px 30px;
+	  	list-style: none;
+	  	display: flex;
+    }
+   
+    footer>ul>li{
+	  	margin: 5px;
+	  	padding: 5px;
+    }
+  
+    footer>ul>li>a {
+  		color: black;
+    }
+    
+    .hidden {
+    	display: none;
+    }
 </style>
 </head>
 <body>
+  <nav class="navbar">
+  	<ul class="navbar_logo">
+		<li>
+		<i class="far fa-calendar-alt" style="color: #fff59d;"></i>
+		<span>&nbsp;myCalendar</span>
+		</li>
+		<li><a id="QA" href="${pageContext.request.contextPath}/board/listPage">Q&A</a></li>
+  	</ul>
+  	<ul class="navbar_icons">
+  		<li><a href="${pageContext.request.contextPath}/index.jsp"><i class="fas fa-sign-out-alt"></i></a></li>
+  		<li><a href="${pageContext.request.contextPath}/user/viewUser?number=${sessionScope.loginNumber}"><i class="fas fa-users-cog"></i></a></li>
+  	</ul>
+  </nav>
+  
 	<div>
 	<h2>아래의 일정을 변경합니다.</h2>
 	<form id="updateForm" action="${pageContext.request.contextPath}/schedule/updateResult" method="post">
-		<input type="hidden" name="userId" id="num" value="${schedule.userId }" readonly><br>
-		<label for="scheduleId">일정 번호</label> <input type="number" name="scheduleId" id="id" value="${schedule.scheduleId }" readonly><br>
+		<input type="hidden" class="hidden" name="userId" id="num" value="${schedule.userId }" readonly><br>
+		<input type="hidden" class="hidden" name="scheduleId" id="id" value="${schedule.scheduleId }" readonly><br>
 		<label for="scheduleTitle">일정 이름</label> <input type="text" id="title" name="scheduleTitle" value="${schedule.scheduleTitle }"><br>
 		<label for="start">시작 시간</label> <input type="datetime-local" id="start" name="start" value="${schedule.start }" ><br>
 		<label for="end">종료 시간</label> <input type="datetime-local" id="end" name="end" value="${schedule.end }"><br>
@@ -144,5 +245,13 @@ $(document).ready(function(){
 		<input type="submit" class="button" id="deletebutton" value="삭제하기">
 	</form>
 	</div>
+	
+  <footer>
+  	<ul class="footer">
+  		<li><a href="#">이용약관</a></li>
+	  	<li><a href="#">개인정보처리방침</a></li>
+	  	<li><a href="#" style="font-weight: bold">ⓒmyCalendar</a></li>
+  	</ul>
+  </footer>
 </body>
 </html>
