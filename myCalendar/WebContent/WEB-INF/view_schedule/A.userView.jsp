@@ -120,7 +120,7 @@ h2{
 </table>
 <br>
  <p><a href="${pageContext.request.contextPath}/user/test">처음으로</a></p>
-
+<!-- 보완해야함 -->
 <%-- <p><a href="${pageContext.request.contextPath}/schedule/afterLogin?num=${sessionScope.loginNumber}">내 달력으로</a></p>
 <form action="${pageContext.request.contextPath}/schedule/afterLogin?num=${sessionScope.loginNumber}" method="post">
 		<input type="submit" value="MyCalendar로 가기">

@@ -18,21 +18,7 @@ body {
 	    font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
 	}
 	
-/* #container{
-		position:absolute;
-		width:400px;
-		height:400px; 
-		background-color:white;
-		text-align :right; 
-		margin-right:50px;
-		margin-left: 0 auto;
-		margin-top: -150px;
-		padding-left:-100px;
-		padding-right:50px;
-		left: 30%;
-		top:50%; 
-		border-radius:10px;
-} */
+
 
 #container{
 		position:absolute;
@@ -49,14 +35,7 @@ body {
 		padding-top:50px;
 	}
 	
-/* #usertable{
-		width:100%;
-		table-layout:fixed;
-		border-collapse:collapse;
-		border:1px solid #168;
-		text-align:left;
-	
-} */
+
 button[type=button]  {
 		font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
 		width: 150px;
