@@ -12,6 +12,7 @@
 <style>
 
 	body {
+		background-size:cover;
 		background-image: url('${pageContext.request.contextPath}/bg_02.jpeg');
 		background-color:#17a2b8;
 		background-repeat: no-repeat;
@@ -39,8 +40,9 @@
 		height:400px;
 		background-color:white;
 		/* text-align :center; */
-		margin-left: 0 auto;
-		margin-top: -150px;
+		/* margin-left: 0 auto; */
+		margin-left:-200px;
+		margin-top: -200px;
 		left: 50%;
 		top:50%;
 		border-radius:10px;
