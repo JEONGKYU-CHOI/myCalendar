@@ -64,6 +64,17 @@ input[type=button] {
 		box-shadow: 0 4px 16px rgba(15, 34, 45, 0.3);
 		margin-bottom: 10px;
 	}
+	
+.button{
+		font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
+		width: 300px;
+		height: 40px;
+		background-color: #0F222D;
+		color: white;
+		font-size: 16px;
+		border-radius: 5px;
+		box-shadow: 0 4px 16px rgba(15, 34, 45, 0.3);
+  }
 
 h2{
 	color: #0F222D;
@@ -119,13 +130,9 @@ h2{
 	</tr>
 </table>
 <br>
- <p><a href="${pageContext.request.contextPath}/user/test">처음으로</a></p>
-<!-- 보완해야함 -->
-<%-- <p><a href="${pageContext.request.contextPath}/schedule/afterLogin?num=${sessionScope.loginNumber}">내 달력으로</a></p>
+</form>
 <form action="${pageContext.request.contextPath}/schedule/afterLogin?num=${sessionScope.loginNumber}" method="post">
-		<input type="submit" value="MyCalendar로 가기">
-	</form> --%>
-
+	<input type="submit" class="button" value="달력 화면으로 돌아가기">
 </form>
 </div>
 
