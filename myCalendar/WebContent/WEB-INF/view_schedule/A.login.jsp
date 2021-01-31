@@ -12,9 +12,12 @@
 <style>
 
 	body {
+		
+		min-height:100%;
+		background: center fixed;
 		background-size:cover;
 		background-image: url('${pageContext.request.contextPath}/bg_02.jpeg');
-		background-color:#17a2b8;
+		background-color:#17a2b8; 
 		background-repeat: no-repeat;
 	    margin: 0;
 	    padding: 0;

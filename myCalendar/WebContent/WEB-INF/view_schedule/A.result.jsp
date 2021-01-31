@@ -7,6 +7,8 @@
 <title>registration result</title>
 <style type="text/css">
 body {
+		min-height:100%;
+		background: center fixed;
 		background-size:cover;
 		background-image: url('${pageContext.request.contextPath}/bg_02.jpeg');
 		background-color:#17a2b8;
@@ -43,25 +45,7 @@ button[type=button]  {
 		margin-bottom: 10px;
 	}
 
-.btn {
-		font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
-		width: 150px;
-		height: 40px;
-		background-color: #0F222D;
-		color: white;
-		font-size: 16px;
-		border-radius: 5px;
-		box-shadow: 0 4px 16px rgba(15, 34, 45, 0.3);
-		margin-bottom: 10px;
-	}
-/* input{
-		border-radius:4px;
-		border:1px grey solid;
-		position:relative;
-		display:inline;
-		
-		
-	} */
+
 	
 fieldset,legend{
 		width:80%;
@@ -74,29 +58,22 @@ fieldset,legend{
 		text-align:center;
 		
 }	
-/* 	label{
-		font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
-		font-size: 14px;
-		color: #0F222D;
-		vertical-align: middle;
-		text-align:center;
-		
-	}	
- */
+
 
 a{
 	text-decoration:none;
+	color:white;
 }	
 a:focus {
 	outline: none !important;
 	}
 
-	a:hover {
+/* 	a:hover {
 		text-decoration: none;
 		color: white;
 	    border-color: #fc00ff;
 	}
-
+ */
 
 h2{
 	color: #0F222D;
@@ -110,16 +87,16 @@ h2{
 <body>
 
 <div id="container">
-<h2>회원가입을 환영합니다!</h2>
-<fieldset>
-	<legend>회원 가입 상세 내용</legend>
-	회원번호:${user.number} <br>
-	이름: ${user.name} <br>
-	회원 아이디 :${user.id} <br>
-	전화번호 :${user.phone} <br>
-	이메일:${user.email} <br>
+	<h2>회원가입을 환영합니다!</h2>
+		<fieldset>
+			<legend>회원 가입 상세 내용</legend>
+			회원번호:${user.number} <br>
+			이름: ${user.name} <br>
+			회원 아이디 :${user.id} <br>
+			전화번호 :${user.phone} <br>
+			이메일:${user.email} <br>
 	
-</fieldset>
+	</fieldset>
 
 	<button type="button"><a href="${pageContext.request.contextPath}/user/login">로그인하기</a></button>
 

@@ -7,15 +7,16 @@
 <title>회원 정보 상세 페이지</title>
 
 <style type="text/css">
-body {
-		background-size:cover;
-		background-image: url('${pageContext.request.contextPath}/bg_02.jpeg'); 
-		background-color: #FCF1DC;/*#59444C;/*#0F222D;/*#231826;/* #2A192F; */
-		background-repeat: no-repeat;
-	    margin: 0;
-	    padding: 0;
-	    font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
-	
+	body {
+			min-height:100%;
+			background: center fixed;
+			background-size:cover;
+			background-image: url('${pageContext.request.contextPath}/bg_02.jpeg'); 
+			background-color: #FCF1DC;/*#59444C;/*#0F222D;/*#231826;/* #2A192F; */
+			background-repeat: no-repeat;
+		    margin: 0;
+		    padding: 0;
+		    font-family: Noto Sans KR, Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
 	}
 	
 /* #container{

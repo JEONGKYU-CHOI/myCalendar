@@ -7,6 +7,8 @@
 <title>kakaoUserReg.jsp</title>
 <style type="text/css">
 body {
+		min-height:100%;
+		background: center fixed;
 		background-size:cover;
 		background-image: url('${pageContext.request.contextPath}/bg_02.jpeg');
 		background-color:#17a2b8;
