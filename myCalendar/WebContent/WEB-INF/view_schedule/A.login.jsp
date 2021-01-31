@@ -12,7 +12,6 @@
 <style>
 
 	body {
-		
 		min-height:100%;
 		background: center fixed;
 		background-size:cover;
