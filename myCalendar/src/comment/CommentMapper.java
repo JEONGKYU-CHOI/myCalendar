@@ -13,7 +13,7 @@ import org.apache.ibatis.annotations.Update;
 public interface CommentMapper {
 	
 	//insert
-	@Insert("insert into newcomment(board_id, comment_title, comment_content, comment_name, comment_password) values(#{boardId}, #{commentTitle}, #{commentContent}, #{commentName}, #{commentPassword})")
+	@Insert("insert into newcomment(board_id, comment_content, comment_name, comment_password) values(#{boardId}, #{commentContent}, #{commentName}, #{commentPassword})")
 	public int insertComment(Comment comment);
 	
 	//delete
@@ -23,8 +23,6 @@ public interface CommentMapper {
 	//id로만 지우기
 	@Delete("delete from newcomment where id=#{id}")
 	public int deletecomment(int id);
-	
-	
 	
 	//update
 	@Update("update newcomment set comment_title=#{commentTitle}, comment_content=#{commentContent}, comment_name=#{commentName}, udate=#{udate}"
