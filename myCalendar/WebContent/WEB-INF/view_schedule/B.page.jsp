@@ -24,7 +24,10 @@
 <style>
 
 body {
-
+    margin: 0;
+    padding: 0;
+    font-family: Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 14px;
  
 }
 

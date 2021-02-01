@@ -25,6 +25,8 @@ crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+
 <meta charset="UTF-8">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -39,7 +41,10 @@ crossorigin="anonymous">
 </script>
 <style>
 body {
-
+    margin: 0;
+    padding: 0;
+    font-family: Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 14px;
  
 }
 
