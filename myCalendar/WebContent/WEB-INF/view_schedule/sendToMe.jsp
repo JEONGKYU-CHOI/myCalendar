@@ -63,13 +63,13 @@
       objectType: 'text',
       text: text,
       link: {
-            webUrl: "http://localhost:8080/testCalendar/"
+            webUrl: "http://localhost:8080/myCalendar/"
       },
       buttons: [
         {
           title: '사이트 열기',
           link: {
-            webUrl: "http://localhost:8080/testCalendar/"
+            webUrl: "http://localhost:8080/myCalendar/"
           }
         }  
       ]
