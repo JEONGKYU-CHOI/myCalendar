@@ -3,51 +3,57 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<meta charset="UTF-8">
+<title>게시판</title>
+
 <!-- include libraries(jQuery, bootstrap) -->
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
 <!-- include summernote css/js -->
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
-<!-- include summernote css/js -->
-<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
-<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
 <script src="http://cdnjs.cloud flare.com/ajax/libs/summernote/0.8.9/lang/summernote-ko-KR.js"></script>
+
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" 
 href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" 
 integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" 
 crossorigin="anonymous">
-
+  
 <script src="https://kit.fontawesome.com/f95cd7a2ae.js" crossorigin="anonymous"></script>
-
 <link href="https://fonts.googleapis.com/css2?family=Fraunces&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 
 
-<meta charset="UTF-8">
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<meta charset="UTF-8">
-<title>게시판</title>
 <script>
-	var result = '${result}';
-	if(result === 'registerOK'){
-		alert('등록이 완료되었습니다.');
-	}
+$(document).ready(function() {
+	  $('#summernote').summernote({
+ 	    	placeholder: 'content',
+	        minHeight: 370,
+	        maxHeight: null,
+	        focus: true, 
+	        lang : 'ko-KR'
+	  });
+	});
 </script>
 <style>
+
 body {
     margin: 0;
     padding: 0;
     font-family: Fraunces, Arial, Helvetica Neue, Helvetica, sans-serif;
     font-size: 14px;
- 
-}
 
+}
   .fc-day-top.fc-sun.fc-past, .fc-day-top.fc-sun.fc-future {
   	color: #FF0000;
   }
@@ -66,7 +72,6 @@ body {
   	padding: 15px 30px 10px 30px;
   	list-style: none;
   	display: flex;
-  	font-size: medium;
   }
   
   footer>ul>li{
@@ -162,29 +167,14 @@ body {
   	text-decoration: none;
   	color: white;
   }
-  
-  #a1{
+    #a1{
   color: black;
   }
-  
+
 </style>
-
-<script>
-$(document).ready(function() {
-	  $('#summernote').summernote({
- 	    	placeholder: 'content',
-	        minHeight: 370,
-	        maxHeight: null,
-	        focus: true, 
-	        lang : 'ko-KR'
-	  });
-	});
-</script>
-
-
-
 </head>
-<body>
+
+<body style="text-align: center;">         
   <nav class="navbar">
   	<ul class="navbar_logo">
 		<li>
@@ -201,8 +191,8 @@ $(document).ready(function() {
   
   <div style=" margin-left: 20%; margin-right: 20%;">
 	  <div>
-	<h2 style="text-align: center;">게시글 작성</h2><br><br><br>
-	</div>	
+	<h2>게시글 작성하기</h2>
+	</div>
 	
 	<section class="rounded" style="background-color: lightgray; width: auto; height: auto; padding: 20px; margin-bottom: 100px;">
  	<div style="width: auto; height: auto; padding-bottom: 50px;">

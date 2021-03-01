@@ -37,15 +37,15 @@ public class BoardController {
 	private CommentService commentservice;
 
 	        
-//	board
-	       
+//	board        
+	                 
 	//insert
 	@GetMapping("/insertform")
 	public String insert() {
 
 		return "B.insertBoard";
 	}
-	           
+	                       
 	@PostMapping("/insert")
 	public String insertBoard(Model m, RedirectAttributes rttr, @RequestParam(value = "num", defaultValue = "1")int num, Board board) {
 		Page page = new Page();
@@ -221,16 +221,18 @@ public class BoardController {
 	}    
 	
 	@PostMapping("deletecomment")
-	public String deleteComment(Model m, @Param("id") int id, @Param("commentPassword") String commentPassword) {
-		commentservice.deleteComment1(id, commentPassword);
-		Board board = boardservice.selectById(id);
-		m.addAttribute("board", board);
-		System.out.println(board);
-		List<Comment> cList = commentservice.selectBoardId(id);
-		m.addAttribute("cList", cList);
-		System.out.println(cList);   
+	public String deleteComment(Model m, @Param("id") int id, @Param("commentPassword") String commentPassword, @RequestParam(value = "num", defaultValue = "1")int num) {
+		commentservice.deleteComment1(id, commentPassword);		                         
+		Page page = new Page();
 		
-		return "B.selectOne";
+		page.setNum(num);
+		page.setCount(boardservice.selectCount());
+		
+		List<Board> bList = boardservice.listPage(page.getDisplayPost(), page.getPostNum());
+
+		m.addAttribute("bList", bList);
+		m.addAttribute("select", num);
+		return "B.page";   
 	}
 	
 	@GetMapping("/one")      
